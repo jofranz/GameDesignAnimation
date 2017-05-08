@@ -211,7 +211,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/my/dev/Unity/Rockstar/Rockstar/user.keystore
+  AndroidKeystoreName: C:/my/dev/SourceTree/GameDesignAnimation/Rockstar/user.keystore
   AndroidKeyaliasName: worksforme
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
