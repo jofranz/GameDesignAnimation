@@ -39,6 +39,9 @@ public class ItemTrigger : MonoBehaviour {
 		//showText = true;
 	}
 
+
+
+
 	void OnGUI(){
 		if (showText) {
 			GUI.Box (new Rect (0, Screen.height/2, Screen.width, Screen.height), text + "\nneue Zeile");
