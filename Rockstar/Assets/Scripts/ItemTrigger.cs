@@ -9,8 +9,10 @@ public class ItemTrigger : MonoBehaviour {
 
 	public string text = "method call - something happend";
 	public bool showText = false;
-
 	public Text showTextLabel;
+
+
+
 	// Use this for initialization
 	void Start () {
 		showTextLabel.text = "emptyyy";
