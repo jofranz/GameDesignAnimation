@@ -11,6 +11,7 @@ public class ItemTrigger : MonoBehaviour {
 	public bool showText = false;
 	public Text showTextLabel;
 
+	//public ShowText showtext = new ShowText();
 
 
 	// Use this for initialization
@@ -28,6 +29,7 @@ public class ItemTrigger : MonoBehaviour {
 		print ("enter box " + Time.fixedTime);
 
 		showTextLabel.text = "erschlagen";
+
 
 		showTextNow ();
 	}

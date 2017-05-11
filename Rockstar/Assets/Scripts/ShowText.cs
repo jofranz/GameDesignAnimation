@@ -7,6 +7,10 @@ public class ShowText : MonoBehaviour {
 
 	public Text textLabel;
 
+	public ShowText() {
+		print ("Constructor ShowText aufgerufen");
+		textLabel.text = "default-leer";
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +31,7 @@ public class ShowText : MonoBehaviour {
 	}
 
 
-	void setText(string aText) {
+	public void setText(string aText) {
 		textLabel.text = aText;
 	}
 

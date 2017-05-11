@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour {
 
+
+	public ShowText st = new ShowText();
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,14 +21,9 @@ public class Mouse : MonoBehaviour {
 
 
 	void OnMouseOver() {
-
-
 		if( Input.GetMouseButtonDown (0) ) {
 			print ("Felix ist der beste Designer");
-
+			st.setText ("boxboxbox");
 		}
-
 	}
-
-
 }
