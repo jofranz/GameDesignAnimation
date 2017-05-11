@@ -26,6 +26,7 @@ public class GotoMouse : MonoBehaviour {
 	void walkToClickPosition() {
 		if ( Input.GetMouseButton (0) ) {
 			clickTarget = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			// print (clickTarget);
 			target.y = transform.position.y;
 		}
 		clickTarget.y = - playerDefaultYPosition;
