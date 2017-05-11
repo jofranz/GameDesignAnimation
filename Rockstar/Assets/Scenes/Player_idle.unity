@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 1534617223}
   - component: {fileID: 1534617228}
   - component: {fileID: 1534617224}
+  - component: {fileID: 1534617227}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -690,6 +691,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534617227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534617222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914cff1bef6e797479b4e79cea02619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: method call - something happend
+  showText: 0
+  showTextLabel: {fileID: 2066308865}
 --- !u!50 &1534617228
 Rigidbody2D:
   serializedVersion: 4
