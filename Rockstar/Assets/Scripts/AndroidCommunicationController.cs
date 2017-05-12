@@ -6,8 +6,8 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 
 
-	ShowText ShowTextScript;
-	public GameObject TextControllerGO;
+	private ShowText ShowTextScript;
+	private GameObject TextControllerGO;
 
 
 

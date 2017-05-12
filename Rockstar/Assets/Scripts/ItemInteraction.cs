@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mouse : MonoBehaviour {
+public class ItemInteraction : MonoBehaviour {
 
 
-	ShowText ShowTextScript;
-	public GameObject TextControllerGO;
+	private ShowText ShowTextScript;
+	private GameObject TextControllerGO;
 
-	GuiLabel GuiLabelScript;
-	public GameObject GuiLabelGO;
+	private GuiLabel GuiLabelScript;
+	private GameObject GuiLabelGO;
 
 
 	// Use this for initialization
@@ -35,7 +35,8 @@ public class Mouse : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0) ) {
 			GuiLabelScript.showBox (true);
 			//clickedBefore = true;
-			ShowTextScript.setText ("Box angeklickt " + Time.fixedTime);
+			string targetName = gameObject.transform.name;
+			ShowTextScript.setText (targetName + " angeklickt " + Time.fixedTime);
 		} 
 
 //		if(Input.GetMouseButtonDown (0) && clickedBefore){

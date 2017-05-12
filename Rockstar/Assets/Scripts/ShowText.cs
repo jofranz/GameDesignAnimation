@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ShowText : MonoBehaviour {
 
+	/* 
+	 * This class must be linked to the textfield in interface builder
+	*/
+
 	public Text textLabel;
 
 
