@@ -31,9 +31,16 @@ public class Mouse : MonoBehaviour {
 		
 
 	void OnMouseOver() {
-		if( Input.GetMouseButtonDown (0) ) {
+
+		if (Input.GetMouseButtonDown (0) ) {
 			GuiLabelScript.showBox (true);
-			ShowTextScript.setText("Box angeklickt " + Time.fixedTime);
-		}
+			//clickedBefore = true;
+			ShowTextScript.setText ("Box angeklickt " + Time.fixedTime);
+		} 
+
+//		if(Input.GetMouseButtonDown (0) && clickedBefore){
+//			GuiLabelScript.showBox (false);
+//			clickedBefore = true;
+//		}
 	}
 }
