@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class ItemTrigger : MonoBehaviour {
 
+	GuiLabel GuiLabelScript;
+	public GameObject GuiLabelGO;
 
-	public string text = "method call - something happend";
-	public bool showText = false;
-	public Text showTextLabel;
 
-	//public ShowText showtext = new ShowText();
 
 
 	// Use this for initialization
 	void Start () {
-		showTextLabel.text = "emptyyy";
+
+		//GuiLabelGO = GameObject.Find ("Main Camera");
+		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
 	}
 	
 	// Update is called once per frame
@@ -28,10 +28,8 @@ public class ItemTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D target) {
 		print ("enter box " + Time.fixedTime);
 
-		showTextLabel.text = "erschlagen";
 
-
-		showTextNow ();
+		GuiLabelScript.showBox (true);
 	}
 
 //	void OnTriggerExit2D(Collider2D target) {
@@ -39,21 +37,7 @@ public class ItemTrigger : MonoBehaviour {
 //	}
 
 
-	void showTextNow() {
-		//showText = true;
-	}
 
-
-
-
-	void OnGUI(){
-		if (showText) {
-			GUI.Box (new Rect (0, Screen.height/2, Screen.width, Screen.height), text + "\nneue Zeile");
-			if (Input.GetMouseButtonDown (0)) {
-				showText = false; 
-			}
-		}
-	}
 
 
 }

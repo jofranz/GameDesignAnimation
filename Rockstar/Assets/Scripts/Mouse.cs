@@ -6,13 +6,21 @@ public class Mouse : MonoBehaviour {
 
 
 	ShowText ShowTextScript;
-	public GameObject TextController;
+	public GameObject TextControllerGO;
+
+	GuiLabel GuiLabelScript;
+	public GameObject GuiLabelGO;
 
 
 	// Use this for initialization
 	void Start () {
-		TextController = GameObject.Find ("TextController");
-		ShowTextScript = TextController.GetComponent<ShowText>();
+		TextControllerGO = GameObject.Find ("TextController");
+		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
+
+
+
+		GuiLabelGO = GameObject.Find ("Main Camera");
+		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
 	}
 
 
@@ -24,6 +32,7 @@ public class Mouse : MonoBehaviour {
 
 	void OnMouseOver() {
 		if( Input.GetMouseButtonDown (0) ) {
+			GuiLabelScript.showBox (true);
 			ShowTextScript.setText("Box angeklickt " + Time.fixedTime);
 		}
 	}
