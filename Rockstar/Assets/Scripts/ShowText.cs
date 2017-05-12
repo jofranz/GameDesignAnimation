@@ -8,8 +8,7 @@ public class ShowText : MonoBehaviour {
 	public Text textLabel;
 
 	public ShowText() {
-		print ("Constructor ShowText aufgerufen");
-		textLabel.text = "default-leer";
+
 	}
 
 	// Use this for initialization
@@ -21,7 +20,7 @@ public class ShowText : MonoBehaviour {
 
 		// code for java connection
 		AndroidJNIHelper.debug = true;
-		AndroidJavaClass jc = new AndroidJavaClass("com.f0rceUpdat3.first2dApp.UnityPlayerActivity");
+		AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
 		jc.CallStatic ("recMessage");
 	}
 	

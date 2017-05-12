@@ -5,25 +5,26 @@ using UnityEngine;
 public class Mouse : MonoBehaviour {
 
 
-	public ShowText st = new ShowText();
+	ShowText ShowTextScript;
+	public GameObject TextController;
 
 
 	// Use this for initialization
 	void Start () {
-		
+		TextController = GameObject.Find ("TextController");
+		ShowTextScript = TextController.GetComponent<ShowText>();
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-
+		
 
 	void OnMouseOver() {
 		if( Input.GetMouseButtonDown (0) ) {
-			print ("Felix ist der beste Designer");
-			st.setText ("boxboxbox");
+			ShowTextScript.setText("Box angeklickt " + Time.fixedTime);
 		}
 	}
 }
