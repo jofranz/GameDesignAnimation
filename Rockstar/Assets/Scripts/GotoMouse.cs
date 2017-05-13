@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class GotoMouse : MonoBehaviour {
 
+	/*
+	 * 
+	 * Be careful. Unity converts a negative float to a positive one. Negative values are added down below 
+	 * 
+	*/
+
 	public float speed = 2.0f;
-	public float playerDefaultYPosition = 2.12f; // negative value down below
+	public float playerUpperYPosition = 2.72f; // negative value down below
+	public float playerLowerYPosition = 0.7f; // negative value down below
 	private Vector2 clickTarget;
-	private Vector2 target;
 
 	// Use this for initialization
 	void Start () {
 		clickTarget = transform.position;
+		print ("pos: " + playerUpperYPosition + " :: " + playerLowerYPosition);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		walkToClickPosition ();
-
 		setPlayerPerspective ();
 	}
 
@@ -26,14 +31,30 @@ public class GotoMouse : MonoBehaviour {
 	void walkToClickPosition() {
 		if ( Input.GetMouseButton (0) ) {
 			clickTarget = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			// print (clickTarget);
-			target.y = transform.position.y;
 		}
-		clickTarget.y = - playerDefaultYPosition;
+
+
+		if (clickTarget.y > -0.7f) { //negative
+			clickTarget.y = -0.7f;
+		}
+
+
+		if (clickTarget.y < -2.72f) { //negative
+			clickTarget.y = -2.72f;
+		}
+
+
+		
+
+
 		transform.position = Vector2.MoveTowards (transform.position, clickTarget, speed * Time.deltaTime);
+
+		//transform.position = Vector2.MoveTowards(
+
 	}
 
 
+	// vertical mirror axis for player looking direction
 	void setPlayerPerspective() {
 		// checks in which direction the player is looking
 		if (transform.position.x < clickTarget.x) {
