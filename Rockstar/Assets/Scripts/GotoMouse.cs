@@ -11,14 +11,14 @@ public class GotoMouse : MonoBehaviour {
 	*/
 
 	public float speed = 2.0f;
-	public float playerUpperYPosition = 2.72f; // negative value down below
-	public float playerLowerYPosition = 0.7f; // negative value down below
+	// public float playerUpperYPosition = 2.72f; // negative value down below
+	// public float playerLowerYPosition = 0.7f; // negative value down below
 	private Vector2 clickTarget;
 
 	// Use this for initialization
 	void Start () {
 		clickTarget = transform.position;
-		print ("pos: " + playerUpperYPosition + " :: " + playerLowerYPosition);
+		// print ("pos: " + playerUpperYPosition + " :: " + playerLowerYPosition);
 	}
 	
 	// Update is called once per frame
@@ -34,13 +34,13 @@ public class GotoMouse : MonoBehaviour {
 		}
 
 
-		if (clickTarget.y > -0.7f) { //negative
-			clickTarget.y = -0.7f;
+		if (clickTarget.y > 0.33f) { //negative
+			clickTarget.y = 0.33f;
 		}
 
 
-		if (clickTarget.y < -2.72f) { //negative
-			clickTarget.y = -2.72f;
+		if (clickTarget.y < -1.97f) { //negative
+			clickTarget.y = -1.97f;
 		}
 
 
