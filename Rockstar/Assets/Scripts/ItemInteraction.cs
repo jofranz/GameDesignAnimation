@@ -8,8 +8,8 @@ public class ItemInteraction : MonoBehaviour {
 	private ShowText ShowTextScript;
 	private GameObject TextControllerGO;
 
-	private GuiLabel GuiLabelScript;
-	private GameObject GuiLabelGO;
+	private GuiBox GuiBoxScript;
+	private GameObject GuiBoxGO;
 
 	private float startTime = 0.0f;
 	private float pressDuration = 1.0f;
@@ -24,8 +24,8 @@ public class ItemInteraction : MonoBehaviour {
 		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
 
 
-		GuiLabelGO = GameObject.Find ("Main Camera");
-		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
+		GuiBoxGO = GameObject.Find ("Main Camera");
+		GuiBoxScript = GuiBoxGO.GetComponent<GuiBox> ();
 
 		targetName = gameObject.transform.name;
 	}
@@ -47,15 +47,10 @@ public class ItemInteraction : MonoBehaviour {
 			}
 
 		}
-
-
-
-
 	}
 		
 
 	void OnMouseOver() {
-
 		if (Input.GetMouseButtonDown (0)) {
 
 			if (startTime == 0.0F) {
@@ -65,23 +60,17 @@ public class ItemInteraction : MonoBehaviour {
 
 			isPressed = true;
 
-
-
-
 			print ("startTime: " + startTime + " pressDuration: " + pressDuration + " timePassed: " + timePassed);
 
-
-
-
-			GuiLabelScript.showBox (true);
+			GuiBoxScript.showBox (true);
 
 			ShowTextScript.setText (targetName + " angeklickt " + Time.time);
 		} 
 
+
 		if (Input.GetMouseButtonUp (0)) {
 			resetTimer ();
 		}
-
 	}
 	
 
@@ -89,10 +78,10 @@ public class ItemInteraction : MonoBehaviour {
 		resetTimer ();
 	}
 
+
 	void resetTimer() {
 		isPressed = false;
 		startTime = 0.0F;
 		print ("resetTimer");
 	}
-
 }

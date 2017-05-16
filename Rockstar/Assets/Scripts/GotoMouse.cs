@@ -6,6 +6,7 @@ public class GotoMouse : MonoBehaviour {
 
 	/*
 	 * 
+	 * Player walks wherever you click on the screen.
 	 * Be careful. Unity converts a negative float to a positive one. Negative values are added down below 
 	 * 
 	*/
@@ -42,15 +43,10 @@ public class GotoMouse : MonoBehaviour {
 		if (clickTarget.y < -1.97f) { //negative
 			clickTarget.y = -1.97f;
 		}
-
-
-		
-
-
+			
 		transform.position = Vector2.MoveTowards (transform.position, clickTarget, speed * Time.deltaTime);
 
 		//transform.position = Vector2.MoveTowards(
-
 	}
 
 

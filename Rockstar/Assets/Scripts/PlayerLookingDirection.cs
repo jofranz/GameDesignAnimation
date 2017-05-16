@@ -6,7 +6,7 @@ public class PlayerLookingDirection : MonoBehaviour {
 
 	private Rigidbody2D rg;
 	private Animator animator;
-	private float prevPos = 0;
+	private float prevPosX = 0;
 	private Vector2 position;
 
 	void Start(){
@@ -21,12 +21,12 @@ public class PlayerLookingDirection : MonoBehaviour {
 
 
 		// checks and animates player if moving
-		if (rg.position.x != prevPos) {
+		if (rg.position.x != prevPosX) {
 			animator.SetInteger ("AnimState", 1);
 		} else {
 			animator.SetInteger("AnimState", 0);
 		}
 			
-		prevPos = rg.position.x;
+		prevPosX = rg.position.x;
 	}
 }

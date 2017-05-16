@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * 
+ * Displays a textbox in the upper left of the screen. Stays there unitl it's bool variable is disabled
+ * 
+*/
+
 public class GuiLabel : MonoBehaviour {
 
-	private bool showBoxStatus = false;
+	public bool showLabelStatus = false;
 	private string textLabelContent = "change this via setTextLabel() \nnew line? \n ";
-	private string textBoxContent = "change this via setTextBox() \nnew line? \n ";
  
 	// Use this for initialization
 	void Start () {
-		print ("guilabel start");
-
+		print ("guiLABEL start");
 	}
 	
 	// Update is called once per frame
@@ -20,38 +25,20 @@ public class GuiLabel : MonoBehaviour {
 	}
 
 
-	public void showBox(bool state) {
-		showBoxStatus = state;
+	public void showLabel(bool state) {
+		showLabelStatus = state;
 	}
 
 
 	public void setTextLabel(string str) {
 		textLabelContent = str;
 	}
-
-
-	public void setTextBox(string str) {
-		textBoxContent = str;
-	}
-
+		
 
 	void OnGUI(){
-
-		//rect     x, y, width, height
-		GUI.Label( new Rect(1,1,Screen.width,Screen.height), textLabelContent + Time.fixedTime );
-
-	
-		
-		if (showBoxStatus) {
+		if (showLabelStatus) {
 			//rect     x, y, width, height
-			GUI.Box (new Rect (Screen.width / 2, Screen.height / 2, Screen.width / 2, Screen.height / 2), textBoxContent + Time.fixedTime);
-
-			// on click disable box
-			if (Input.GetMouseButtonDown (0)) {
-				showBox (false);
-			}
-
+			GUI.Label( new Rect(1,1,Screen.width,Screen.height), textLabelContent + Time.fixedTime );
 		}
 	}
-
 }
