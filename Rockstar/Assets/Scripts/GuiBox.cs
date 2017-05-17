@@ -45,7 +45,7 @@ public class GuiBox : MonoBehaviour {
 
 
 	void OnGUI(){
-		if (true) { // debug
+		if (showBoxStatus) { 
 			
 			float xPosition = Screen.width / 4 + 400;
 			float yPosition = Screen.height / 4;

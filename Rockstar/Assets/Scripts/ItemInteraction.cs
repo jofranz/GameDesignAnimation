@@ -24,7 +24,7 @@ public class ItemInteraction : MonoBehaviour {
 		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
 
 
-		GuiBoxGO = GameObject.Find ("Main Camera");
+		GuiBoxGO = GameObject.Find ("TextController");
 		GuiBoxScript = GuiBoxGO.GetComponent<GuiBox> ();
 
 		targetName = gameObject.transform.name;
