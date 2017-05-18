@@ -20,6 +20,7 @@ public class ItemInteraction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// displays a text in the inventory section
 		TextControllerGO = GameObject.Find ("TextController");
 		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
 
@@ -45,7 +46,6 @@ public class ItemInteraction : MonoBehaviour {
 
 				resetTimer ();
 			}
-
 		}
 	}
 		

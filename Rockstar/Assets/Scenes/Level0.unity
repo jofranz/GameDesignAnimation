@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 156495741}
   - component: {fileID: 156495740}
   - component: {fileID: 156495739}
-  - component: {fileID: 156495743}
   m_Layer: 0
   m_Name: pink_door
   m_TagString: Untagged
@@ -381,7 +380,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 156495738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802bd167ddf1b014cb22830d3d0b6d37, type: 3}
+  m_Script: {fileID: 11500000, guid: 342447e997ae6d64e80fb6b8fa986e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &156495740
@@ -462,17 +461,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156495743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 156495738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0369f20bf75659645aa20d357dd231db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &673453654
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d17c2a88bab1d4a84932687cc62058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showLabelStatus: 0
+  showLabelStatus: 1
 --- !u!114 &1174960703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27067a98965d586478611a4d2336e649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showBoxStatus: 0
+  showBoxStatus: 1
   customGuiStyle:
     m_Name: 
     m_Normal:

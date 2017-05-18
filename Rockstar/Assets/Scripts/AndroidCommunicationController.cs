@@ -9,14 +9,27 @@ public class AndroidCommunicationController : MonoBehaviour {
 	private ShowText ShowTextScript;
 	private GameObject TextControllerGO;
 
+	private GuiBox GuiBoxScript;
+	private GameObject GuiBoxGO;
 
+	private GuiLabel GuiLabelScript;
+	private GameObject GuiLabelGO;
 
 
 	void Start () { // Use this for initialization
 
-		// sets up TextController Game Object
+		// displays a text in the inventory section
 		TextControllerGO = GameObject.Find ("TextController");
 		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
+
+		// displays a gui box which can be set visible or invisible
+		GuiBoxGO = GameObject.Find ("TextController");
+		GuiBoxScript = GuiBoxGO.GetComponent<GuiBox> ();
+
+		// displays a debug console text line in the left upper corner
+		GuiLabelGO = GameObject.Find ("TextController");
+		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
+
 
 		// code for java connection
 		AndroidJNIHelper.debug = true;

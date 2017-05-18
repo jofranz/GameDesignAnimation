@@ -14,6 +14,8 @@ public class GuiLabel : MonoBehaviour {
 	public bool showLabelStatus = false;
 	private string textLabelContent = "change this via setTextLabel() \nnew line? \n ";
  
+	private GUIStyle customGuiStyle = new GUIStyle();
+
 	// Use this for initialization
 	void Start () {
 		print ("guiLABEL start");
@@ -37,8 +39,12 @@ public class GuiLabel : MonoBehaviour {
 
 	void OnGUI(){
 		if (showLabelStatus) {
+
+			customGuiStyle.fontSize = 50;
+
 			//rect     x, y, width, height
-			GUI.Label( new Rect(1,1,Screen.width,Screen.height), textLabelContent + Time.fixedTime );
+			GUI.Label( new Rect(1,1,Screen.width,Screen.height), textLabelContent + Time.fixedTime, customGuiStyle );
+		
 		}
 	}
 }
