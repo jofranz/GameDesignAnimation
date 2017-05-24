@@ -33,8 +33,10 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 		// code for java connection
 		AndroidJNIHelper.debug = true;
-		AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
-		jc.CallStatic ("recMessage");
+		//AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
+
+		AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme");
+		jo.CallStatic ("showAdd");
 	}
 	
 
