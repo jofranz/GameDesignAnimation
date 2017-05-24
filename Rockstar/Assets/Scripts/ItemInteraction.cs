@@ -70,8 +70,8 @@ public class ItemInteraction : MonoBehaviour {
 
 			// code for java connection
 			AndroidJNIHelper.debug = true;
-			AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
-
+			AndroidJavaClass jc = new AndroidJavaClass("com.works.forme.BlankFragment");
+			print ("## knoblauch");
 			jc.CallStatic ("showAd");
 		} 
 
