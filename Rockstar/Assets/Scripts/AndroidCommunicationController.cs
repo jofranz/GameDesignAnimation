@@ -36,7 +36,7 @@ public class AndroidCommunicationController : MonoBehaviour {
 		//AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
 
 		AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme");
-		jo.CallStatic ("showAdd");
+		jo.CallStatic ("showAd");
 	}
 	
 

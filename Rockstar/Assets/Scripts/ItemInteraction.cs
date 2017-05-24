@@ -72,7 +72,7 @@ public class ItemInteraction : MonoBehaviour {
 			AndroidJNIHelper.debug = true;
 			AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
 
-			jc.CallStatic ("showAdd");
+			jc.CallStatic ("showAd");
 		} 
 
 
