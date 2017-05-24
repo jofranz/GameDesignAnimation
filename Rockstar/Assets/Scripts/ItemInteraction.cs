@@ -65,6 +65,14 @@ public class ItemInteraction : MonoBehaviour {
 			GuiBoxScript.showBox (true);
 
 			ShowTextScript.setText (targetName + " angeklickt " + Time.time);
+
+
+
+			// code for java connection
+			AndroidJNIHelper.debug = true;
+			AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
+
+			jc.CallStatic ("showAdd");
 		} 
 
 
