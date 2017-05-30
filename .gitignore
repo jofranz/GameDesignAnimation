@@ -96,7 +96,8 @@ gen/
 out/
 
 # Gradle files
-/*/.gradle
+Android/Rockstar/.gradle/
+/*/*/.gradle/
 .gradle/
 build/
 
