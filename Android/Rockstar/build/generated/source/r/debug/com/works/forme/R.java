@@ -794,7 +794,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int large=0x7f09001f;
         public static final int left=0x7f09001a;
         public static final int light=0x7f090010;
-        public static final int logOut=0x7f09002f;
         public static final int login_button=0x7f090026;
         public static final int messenger_send_button=0x7f090031;
         public static final int never_display=0x7f09001e;
@@ -805,6 +804,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int page=0x7f090012;
         public static final int parent=0x7f090000;
         public static final int right=0x7f09001b;
+        public static final int send=0x7f09002f;
         public static final int show=0x7f090023;
         public static final int small=0x7f090021;
         public static final int spread=0x7f090001;

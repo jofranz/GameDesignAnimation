@@ -45,7 +45,7 @@ public class BlankFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        sendButton = (Button) getView().findViewById(R.id.logOut);
+        sendButton = (Button) getView().findViewById(R.id.send);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

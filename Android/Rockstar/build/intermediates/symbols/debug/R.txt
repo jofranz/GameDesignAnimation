@@ -187,7 +187,6 @@ int id inline 0x7f090017
 int id large 0x7f09001f
 int id left 0x7f09001a
 int id light 0x7f090010
-int id logOut 0x7f09002f
 int id login_button 0x7f090026
 int id messenger_send_button 0x7f090031
 int id never_display 0x7f09001e
@@ -198,6 +197,7 @@ int id packed 0x7f090003
 int id page 0x7f090012
 int id parent 0x7f090000
 int id right 0x7f09001b
+int id send 0x7f09002f
 int id show 0x7f090023
 int id small 0x7f090021
 int id spread 0x7f090001
