@@ -20,7 +20,7 @@ import com.google.android.gms.ads.purchase.*;
 public class BlankFragment extends Fragment {
     private static InterstitialAd mInterstitialAd;
     private Button showAd;
-    private Button logoutButton;
+    private Button sendButton;
     private Button inapp;
 
     @Override
@@ -45,11 +45,12 @@ public class BlankFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        logoutButton = (Button) getView().findViewById(R.id.logOut);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
+        sendButton = (Button) getView().findViewById(R.id.logOut);
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getActivity
+                String text = "change this";
+                ((UnityPlayerActivity)getActivity()).mUnityPlayer.UnitySendMessage("AndroidCommunication","JavaMessageIn",text);
             }
         });
         inapp = (Button)getView().findViewById(R.id.inapp);
