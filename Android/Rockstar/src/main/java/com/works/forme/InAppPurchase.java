@@ -17,11 +17,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.vending.billing.IInAppBillingService;
+import com.works.forme.util.IabHelper;
+import com.works.forme.util.IabResult;
+import com.works.forme.util.Purchase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class InAppPurchase extends Activity {
 
@@ -32,6 +36,24 @@ public class InAppPurchase extends Activity {
     private String productID = "blue_hat";
     private String tag;
     private String mPrice;
+    IabHelper mHelper;
+    static final String SKU_Blue_Hat = "blue_hat";
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
+            = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result,
+                                          Purchase purchase)
+        {
+            if (result.isFailure()) {
+                // Handle error
+                return;
+            }
+            else if (purchase.getSku().equals(SKU_Blue_Hat)) {
+                buy.setEnabled(false);
+            }
+
+        }
+    };
+
 
 
     private ServiceConnection mServiceConn = new ServiceConnection() {
@@ -54,72 +76,42 @@ public class InAppPurchase extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_purchase);
         tag = "InAppPurchase";
-        final boolean blnBind = bindService(new Intent(
-                        "com.android.vending.billing.InAppBillingService.BIND"),
-                mServiceConn, Context.BIND_AUTO_CREATE);
+        //final boolean blnBind = bindService(new Intent(
+        //                "com.android.vending.billing.InAppBillingService.BIND"),
+        //        mServiceConn, Context.BIND_AUTO_CREATE);
+        //Intent intent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
+        // This is the key line that fixed everything for me
+        // intent.setPackage("com.android.vending");
+
+        //bindService(intent, mServiceConn, Context.BIND_AUTO_CREATE);
+        String base64EncodedPublicKey = "Test";
+
+        // compute your public key and store it in base64EncodedPublicKey
+        mHelper = new IabHelper(this, base64EncodedPublicKey);
+
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            public void onIabSetupFinished(IabResult result) {
+                if (!result.isSuccess()) {
+                    // Oh no, there was a problem.
+
+                }
+                // Hooray, IAB is fully set up!
+            }
+        });
+
         buy = (Button) findViewById(R.id.buy);
         show = (TextView) findViewById(R.id.show);
 
-        buy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!blnBind) return;
-                if (mService == null) return;
-
-                ArrayList<String> skuList = new ArrayList<String>();
-                skuList.add(productID);
-                Bundle querySkus = new Bundle();
-                querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
-
-                Bundle skuDetails;
-                try {
-                    skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
-                    Log.i(tag, "getSkuDetails() - success return Bundle");
-
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                    Log.d(tag, "getSkuDetails() - fail!");
-                    return;
-                }
-
-                int response = skuDetails.getInt("RESPONSE_CODE");
-                ArrayList<String> responseList
-                        = skuDetails.getStringArrayList("DETAILS_LIST");
-                if (responseList.size() == 0) return;
-
-                for (String thisResponse : responseList) {
-                    try {
-                        JSONObject object = new JSONObject(thisResponse);
-                        String sku = object.getString("productId");
-                        String price = object.getString("price");
-                        if (sku.equals("blue_hat"))
-                            mPrice = price;
-
-                    } catch (JSONException e) {
-                        Log.d(tag, "JSONObject() - failed");
-                    }
-                }
-                Bundle buyIntentBundle = null;
-                try {
-                    buyIntentBundle = mService.getBuyIntent(3, getPackageName(), productID, "inapp", "testbuy");
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                }
-                Log.d(tag, "getBuyIntent() - success return Bundle");
-                response = buyIntentBundle.getInt("RESPONSE_CODE");
-
-                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
-                try {
-                    startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(), 0, 0, 0);
-                } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        });
     }
-
+    public void buyClick(View view) {
+        Log.d("It works","Bitches");
+        try {
+            mHelper.launchPurchaseFlow(this, SKU_Blue_Hat, 10001,
+                    mPurchaseFinishedListener, "mypurchasetoken");
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1001){
@@ -132,8 +124,12 @@ public class InAppPurchase extends Activity {
 
     @Override
     protected void onDestroy() {
-        if (mService != null)
-            unbindService(mServiceConn);
+        if (mHelper != null) try {
+            mHelper.dispose();
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            e.printStackTrace();
+        }
+        mHelper = null;
 
         super.onDestroy();
     }

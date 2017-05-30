@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -1681,7 +1681,7 @@
                     "endOffset": 14787
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2460,7 +2460,7 @@
                     "endOffset": 18976
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2479,7 +2479,7 @@
                     "endOffset": 19036
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2498,7 +2498,7 @@
                     "endOffset": 19145
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2517,7 +2517,7 @@
                     "endOffset": 19227
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2536,7 +2536,7 @@
                     "endOffset": 19331
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2555,7 +2555,7 @@
                     "endOffset": 19434
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2574,7 +2574,7 @@
                     "endOffset": 19554
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2593,7 +2593,7 @@
                     "endOffset": 19652
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/generated/res/google-services/debug/values/values.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/generated/res/google-services/debug/values/values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2612,7 +2612,7 @@
                     "endOffset": 19698
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2631,7 +2631,7 @@
                     "endOffset": 19768
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2669,7 +2669,7 @@
                     "endOffset": 19889
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2726,7 +2726,7 @@
                     "endOffset": 20117
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/strings.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -3061,7 +3061,7 @@
                     "endOffset": 23139
                 },
                 "from": {
-                    "file": "/Users/normen/Documents/Game Design/New Version/Rockstar/src/main/res/values/styles.xml",
+                    "file": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 0,

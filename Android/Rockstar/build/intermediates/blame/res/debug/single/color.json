@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/normen/.android/build-cache/673bff6d187e4bfc42a616b7c759c8b9b586335f/output/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
         "source": "/Users/normen/.android/build-cache/673bff6d187e4bfc42a616b7c759c8b9b586335f/output/res/color/common_google_signin_btn_tint.xml"
     },
     {
-        "merged": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
         "source": "/Users/normen/.android/build-cache/673bff6d187e4bfc42a616b7c759c8b9b586335f/output/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/Users/normen/.android/build-cache/673bff6d187e4bfc42a616b7c759c8b9b586335f/output/res/color/common_google_signin_btn_text_light.xml"
     }
 ]

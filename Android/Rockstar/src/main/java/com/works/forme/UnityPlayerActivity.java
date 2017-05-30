@@ -4,7 +4,11 @@ import com.unity3d.player.*;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -13,6 +17,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import java.util.List;
 
 public class UnityPlayerActivity extends Activity
 {
@@ -43,7 +49,20 @@ public class UnityPlayerActivity extends Activity
 		return mUnityPlayer;
 	}
 	public void changeActivity(){
-		startActivity(new Intent(UnityPlayerActivity.this,InAppPurchase.class));
+		getFragmentManager().popBackStack();
+
+		Intent inapp = new Intent(UnityPlayerActivity.this,com.works.forme.InAppPurchase.class);
+		startActivity(inapp);
+
+	}
+
+
+	@Override
+	public void startActivityForResult(Intent intent, int requestCode) {
+		if (intent == null) {
+			intent = new Intent();
+		}
+		super.startActivityForResult(intent, requestCode);
 	}
 
 	// Quit Unity

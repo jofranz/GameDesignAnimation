@@ -1,7 +1,4 @@
-#Tue May 30 08:32:34 CEST 2017
-base.0=/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_19f6a1acd553e10770467243eb791516bbf9f774
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3f473e7a7e3679da282b887bbab9eec46ac00237/classes.dex
-base.1=/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3f473e7a7e3679da282b887bbab9eec46ac00237
-file.0=/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_19f6a1acd553e10770467243eb791516bbf9f774/classes.dex
+#Tue May 30 12:12:32 CEST 2017
+base.0=/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

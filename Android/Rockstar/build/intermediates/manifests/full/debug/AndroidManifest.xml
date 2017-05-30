@@ -84,7 +84,13 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.works.forme.InAppPurchase"
-            android:label="@string/title_activity_in_app_purchase" />
+            android:label="@string/title_activity_in_app_purchase" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.works.forme.InAppPurchaseFragment" />
+            </intent-filter>
+        </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
