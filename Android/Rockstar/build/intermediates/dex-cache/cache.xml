@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/normen/Desktop/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_864de89c55ce3f1457412d4e3b7c0d16c720138b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5a8bf36591643c00a00beb0644e9aadbff2c35a7">
+        <dex dex="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_19f6a1acd553e10770467243eb791516bbf9f774/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/normen/.android/build-cache/f782f27b690fb9aba5ee07a6a8880813be148549/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ce7ac78201f61b72cbc2a25dbece59328e69d18d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3f473e7a7e3679da282b887bbab9eec46ac00237/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/normen/Documents/Game Design/New Version/Rockstar/libs/unity-classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f91f02a166596e7391b89cd7e51575e325357b">
+        <dex dex="/Users/normen/Documents/Game Design/New Version/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/2/unity-classes_f5dae41b0d8ff6c80ca1f9c0c59330e526deb9d1/classes.dex" />
+    </item>
+
+</items>
