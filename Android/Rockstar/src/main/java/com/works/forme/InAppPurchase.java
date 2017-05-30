@@ -1,31 +1,21 @@
 package com.works.forme;
 
-import android.app.PendingIntent;
-import android.app.Service;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.vending.billing.IInAppBillingService;
 import com.works.forme.util.IabHelper;
 import com.works.forme.util.IabResult;
 import com.works.forme.util.Purchase;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class InAppPurchase extends Activity {
 
@@ -33,12 +23,12 @@ public class InAppPurchase extends Activity {
     //view
     private Button buy,back;
     private TextView show;
-    private String productID = "blue_hat";
     private String tag;
     private String mPrice;
+    private Controller contr;
 
     IabHelper mHelper;
-    static final String SKU_Blue_Hat = "blue_hat";
+    private String SKU_SON_GLASSES = "son_glasses";
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
             = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result,
@@ -48,7 +38,7 @@ public class InAppPurchase extends Activity {
                 // Handle error
                 return;
             }
-            else if (purchase.getSku().equals(SKU_Blue_Hat)) {
+            else if (purchase.getSku().equals(SKU_SON_GLASSES)) {
                 buy.setEnabled(false);
             }
 
@@ -76,6 +66,7 @@ public class InAppPurchase extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_purchase);
+        contr = new Controller();
         tag = "InAppPurchase";
 
         //final boolean blnBind = bindService(new Intent(
@@ -114,8 +105,12 @@ public class InAppPurchase extends Activity {
     }
     public void buyClick(View view) {
         Log.d("It works","Bitches");
+        if (contr.checkStateof(0)){
+            Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
+            return;
+        }
         try {
-            mHelper.launchPurchaseFlow(this, SKU_Blue_Hat, 10001,
+            mHelper.launchPurchaseFlow(this, SKU_SON_GLASSES, 10001,
                     mPurchaseFinishedListener, "mypurchasetoken");
         } catch (IabHelper.IabAsyncInProgressException e) {
             e.printStackTrace();

@@ -23,18 +23,9 @@
     </facet>
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="2" platform="JVM 1.6" useProjectSettings="false">
-        <compilerSettings>
-          <option name="additionalArguments" value="-no-jdk" />
-        </compilerSettings>
+        <compilerSettings />
         <compilerArguments>
-          <option name="destination" value="$MODULE_DIR$/build/tmp/kotlin-classes/releaseUnitTest" />
-          <option name="classpath" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.2-4/e6a7403299b8f3126e3a1576c02e3f07ae5af6fa/kotlin-stdlib-jre7-1.1.2-4.jar:/Users/normen/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.2-4/3f5f1498bdbb9611cb1413f794b3a3a5a6edef34/kotlin-stdlib-1.1.2-4.jar:/Users/normen/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/jars/classes.jar:/Users/normen/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar:/Users/normen/.android/build-cache/c353528227fb7d48e778e0807536f17259f2d138/output/jars/classes.jar:/Users/normen/.android/build-cache/a5f4cd1cb558dae096dec3155d9f23144e9f3838/output/jars/classes.jar:/Users/normen/.android/build-cache/04b667e75edd0abfaf1a0ec136a4b5cd2bbcc1be/output/jars/classes.jar:/Users/normen/.android/build-cache/e96b6ac61590fc72b326fe30f4e21f3563b2eb48/output/jars/classes.jar:/Users/normen/.android/build-cache/673bff6d187e4bfc42a616b7c759c8b9b586335f/output/jars/classes.jar:/Users/normen/.android/build-cache/83ca3c54d3d01a30e561c9a2dec41af17c0a1f86/output/jars/classes.jar:/Users/normen/.android/build-cache/f0a44da8140d5d8e738942da1a3b64da7c773aa1/output/jars/classes.jar:/Users/normen/.android/build-cache/965c5bbcacb0cb10fcb09c00d4fd732d0b6c0ad2/output/jars/classes.jar:/Users/normen/.android/build-cache/24e713acea3d8d365a7b87198d05db6cbdb554f4/output/jars/classes.jar:/Users/normen/.android/build-cache/7734f8608b08285c932904c77816eb35a9048cd2/output/jars/classes.jar:/Users/normen/.android/build-cache/dacc658304e3a95d5cd346d277c7cc4a7bb1c63b/output/jars/classes.jar:/Users/normen/.android/build-cache/f4fe6ace2ab7973a11a63b651050b323e7a9e497/output/jars/classes.jar:/Users/normen/.android/build-cache/8cb38eee4200ad22b397a8bbcba2fe84e946e18a/output/jars/classes.jar:/Users/normen/.android/build-cache/f782f27b690fb9aba5ee07a6a8880813be148549/output/jars/classes.jar:/Users/normen/Desktop/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar:/Users/normen/.android/build-cache/3b197ed4d288d4d05487078c353a95bc2310b2ea/output/jars/classes.jar:/Users/normen/.android/build-cache/e0e3024b6f8ff30f57da7e636a8a65bde400fca9/output/jars/classes.jar:/Users/normen/.android/build-cache/acb0881c26b0bd1463e6f3aae79d6fe7029a5947/output/jars/classes.jar:/Users/normen/.android/build-cache/8ceacdc7748158e37bd5b1dcbbb813774e2bb00a/output/jars/classes.jar:/Users/normen/.android/build-cache/11736afc4f19e82aa5f9b233e675d7b590fcc6ba/output/jars/classes.jar:/Users/normen/.android/build-cache/58eca26964db2e400afe6fbd97f88f4fb751a45b/output/jars/classes.jar:/Users/normen/Desktop/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar:/Users/normen/Documents/Game Design/current Version/Android/Rockstar/libs/unity-classes.jar:/Users/normen/Desktop/platforms/android-25/android.jar" />
-          <option name="noStdlib" value="true" />
-          <option name="noReflect" value="true" />
-          <option name="moduleName" value="Rockstar_release" />
           <option name="jvmTarget" value="1.6" />
-          <option name="addCompilerBuiltIns" value="true" />
-          <option name="loadBuiltInsFromDependencies" value="true" />
           <option name="languageVersion" value="1.1" />
           <option name="apiVersion" value="1.1" />
           <option name="pluginClasspaths">
@@ -89,13 +80,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
@@ -103,6 +87,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/android-profile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
