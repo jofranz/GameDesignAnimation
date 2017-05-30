@@ -36,14 +36,7 @@ public class UnityPlayerActivity extends Activity
 		mUnityPlayer = new UnityPlayer(this);
 		setContentView(mUnityPlayer);
 		mUnityPlayer.requestFocus();
-		FragmentManager fm = getFragmentManager();
 
-		bf = new BlankFragment();
-
-		FragmentTransaction transaction = fm.beginTransaction();
-		transaction.addToBackStack(BlankFragment.class.getName());
-		transaction.replace(android.R.id.content, bf, "CHANGESEEEES");
-		transaction.commit();
 	}
 	public UnityPlayer getmUnityPlayer(){
 		return mUnityPlayer;
@@ -84,6 +77,14 @@ public class UnityPlayerActivity extends Activity
 	{
 		super.onResume();
 		mUnityPlayer.resume();
+		FragmentManager fm = getFragmentManager();
+
+		bf = new BlankFragment();
+
+		FragmentTransaction transaction = fm.beginTransaction();
+		transaction.addToBackStack(BlankFragment.class.getName());
+		transaction.replace(android.R.id.content, bf, "CHANGESEEEES");
+		transaction.commit();
 	}
 
 	// This ensures the layout will be correct.

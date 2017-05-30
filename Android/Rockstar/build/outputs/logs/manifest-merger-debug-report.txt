@@ -125,25 +125,27 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/normen/.android/
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/normen/.android/build-cache/11736afc4f19e82aa5f9b233e675d7b590fcc6ba/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/normen/.android/build-cache/58eca26964db2e400afe6fbd97f88f4fb751a45b/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:43:9-41
+		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:44:9-41
+	android:debuggable
+		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:43:9-35
 	android:icon
 		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:41:9-42
 	android:banner
 		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:40:9-46
 	android:theme
-		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:44:9-50
+		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:45:9-50
 	android:isGame
 		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:42:9-30
 activity#com.works.forme.Splashscreen
-ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:45:9-51:20
+ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:46:9-51:20
 	android:name
-		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:45:19-47
+		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:46:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:46:13-50:29
+ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:47:17-69
+ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:47:25-66
+		ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
 ADDED from /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/AndroidManifest.xml:49:17-77
 	android:name

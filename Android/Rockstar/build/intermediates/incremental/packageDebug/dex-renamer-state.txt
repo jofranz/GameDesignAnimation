@@ -1,4 +1,4 @@
-#Tue May 30 12:12:32 CEST 2017
+#Tue May 30 12:48:52 CEST 2017
 base.0=/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

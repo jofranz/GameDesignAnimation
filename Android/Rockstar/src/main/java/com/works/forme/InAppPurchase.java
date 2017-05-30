@@ -31,11 +31,12 @@ public class InAppPurchase extends Activity {
 
     IInAppBillingService mService;
     //view
-    private Button buy;
+    private Button buy,back;
     private TextView show;
     private String productID = "blue_hat";
     private String tag;
     private String mPrice;
+
     IabHelper mHelper;
     static final String SKU_Blue_Hat = "blue_hat";
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
@@ -76,6 +77,7 @@ public class InAppPurchase extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_purchase);
         tag = "InAppPurchase";
+
         //final boolean blnBind = bindService(new Intent(
         //                "com.android.vending.billing.InAppBillingService.BIND"),
         //        mServiceConn, Context.BIND_AUTO_CREATE);
@@ -101,6 +103,13 @@ public class InAppPurchase extends Activity {
 
         buy = (Button) findViewById(R.id.buy);
         show = (TextView) findViewById(R.id.show);
+        back = (Button)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InAppPurchase.this,UnityPlayerActivity.class));
+            }
+        });
 
     }
     public void buyClick(View view) {
@@ -133,4 +142,5 @@ public class InAppPurchase extends Activity {
 
         super.onDestroy();
     }
+
 }
