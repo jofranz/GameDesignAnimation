@@ -67,6 +67,7 @@ public class InAppPurchase extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_purchase);
         contr = new Controller();
+        contr.loadState();
         tag = "InAppPurchase";
 
         //final boolean blnBind = bindService(new Intent(
@@ -77,7 +78,7 @@ public class InAppPurchase extends Activity {
         // intent.setPackage("com.android.vending");
 
         //bindService(intent, mServiceConn, Context.BIND_AUTO_CREATE);
-        String base64EncodedPublicKey = "Test";
+        String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAji2pxjkVrewvRe8o1VHyp6hii3YU12/D/p/YrjP3TtkvgnpTjCsihTt3Kho4LmNE46aKP7d8SrFdJ8adsnyeNvkQ4xSr2p+n8sH3WibAUA60bqOSH3S7qVbvgXC2OZlyYYzfdWyQTEYQJQB/iuqqC5oe0ZNw6QkDpkIPRNvtv2nUdPBH+ZO0m0eyV8WFjB/UHEC3YjKoVx6V83YApbaVfrZexiVQBl6D1E2e0TVWM3ZWjqYSzYVj1cXnnxLUmXSznPFNFdj0Ne/un6JMJoPDAoxhy7Ru2km6Qwj5KMzyF6zCRxOlH5H0fjI1r6gWmz9IzlSk48+DnCgmFwgD+iibAwIDAQAB\n";
 
         // compute your public key and store it in base64EncodedPublicKey
         mHelper = new IabHelper(this, base64EncodedPublicKey);
@@ -123,6 +124,8 @@ public class InAppPurchase extends Activity {
             int responseCode = data.getIntExtra("RESPONSE_CODE",1);
             Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode));
             show.setText("It works");
+            contr.setElement(0);
+            contr.saveState();
         }
     }
 

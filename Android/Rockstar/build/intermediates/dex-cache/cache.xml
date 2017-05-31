@@ -3,12 +3,39 @@
 
     <item
         is-multidex="false"
+        jar="/Users/normen/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/pre-dexed/debug/annotations-13.0_b2e63f709c0d75fba10e94b662a0edb1a79bf69a.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/normen/Documents/Game Design/current Version/Android/Rockstar/libs/unity-classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="70f91f02a166596e7391b89cd7e51575e325357b">
         <dex dex="/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/pre-dexed/debug/unity-classes_0f02ffb2648a62068af5fec9ec75d9f2f960a5a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/normen/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.2-4/3f5f1498bdbb9611cb1413f794b3a3a5a6edef34/kotlin-stdlib-1.1.2-4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f5f1498bdbb9611cb1413f794b3a3a5a6edef34">
+        <dex dex="/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/pre-dexed/debug/kotlin-stdlib-1.1.2-4_519acc7e4e610f9f79e3d2d0389c109096f02c77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/normen/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.2-4/e6a7403299b8f3126e3a1576c02e3f07ae5af6fa/kotlin-stdlib-jre7-1.1.2-4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e6a7403299b8f3126e3a1576c02e3f07ae5af6fa">
+        <dex dex="/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/pre-dexed/debug/kotlin-stdlib-jre7-1.1.2-4_d0ff27f4962c0d298132d4d14fb64f8d61ef2dad.jar" />
     </item>
 
 </items>

@@ -4,7 +4,7 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import android.R.attr.data
-
+import android.content.Context
 
 
 /**
@@ -24,6 +24,12 @@ class Controller constructor(){
              return didbuyItems[article]
 
     }
+    fun setElement(number: Int){
+        if (number > didbuyItems.count()){
+         return
+        }
+        didbuyItems[number] = true
+    }
     //###load Users bought Items ###
     fun saveState(){
         var filename = "UserBoughtState"
@@ -33,7 +39,7 @@ class Controller constructor(){
         fos.close()
     }
     //###load Users bought Items ###
-    fun load( ){
+    fun loadState( ){
         var file  = File("UserBoughtState")
         var fileinput = FileInputStream(file)
         var filelenght = file.length().toInt()
@@ -48,8 +54,6 @@ class Controller constructor(){
             }
             didbuyItems[i] = false
         }
-
-
     }
 
 

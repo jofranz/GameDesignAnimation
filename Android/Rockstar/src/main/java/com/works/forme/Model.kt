@@ -7,15 +7,14 @@ import android.content.Context
  */
 class Model
 {
-    private var firstname = ""
-    private  var secondname = ""
-    private var location = ""
-    private  var age = 26
+    var firstname = ""
+    var secondname = ""
+    var location = ""
+
     private constructor(context: Context)
     {
         firstname = "Duncan"
         secondname = "Dumb"
-        age = 26
         location = "Undertown"
     }
 
@@ -31,5 +30,6 @@ class Model
 
             return instance!!
         }
+
     }
 }

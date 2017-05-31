@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.purchase.*;
@@ -31,7 +32,13 @@ public class BlankFragment extends Fragment {
         }
         mInterstitialAd.setAdUnitId("ca-app-pub-9202887805780186/8991148952");
         mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("00B74723240B0E3655D79216720F1ABC").build());
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +64,8 @@ public class BlankFragment extends Fragment {
         inapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Model model = Model.Companion.getInstance(getActivity().getApplicationContext());
+                Log.d("Model",model.getFirstname());
                 ((UnityPlayerActivity)getActivity()).changeActivity();
             }
         });
@@ -64,11 +73,7 @@ public class BlankFragment extends Fragment {
         showAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    Log.d("TAG", "The interstitial wasn't loaded yet.");
-                }
+                LoginManager.getInstance().logOut();
             }
         });
     }

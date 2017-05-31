@@ -15,6 +15,7 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.ads.AdRequest;
@@ -53,6 +54,7 @@ public class StartActivity extends Activity {
         mAdView.loadAd(adRequest);
 
 
+
         // #### Facebook Setup ###
 
         AccessToken token;
@@ -68,7 +70,6 @@ public class StartActivity extends Activity {
             public void onSuccess(LoginResult loginResult) {
                 Log.d("onSuccess", loginResult.getAccessToken().getUserId());
                 loadData(loginResult);
-
                 startActivity(new Intent(StartActivity.this,UnityPlayerActivity.class));
 
             }
@@ -111,7 +112,8 @@ public class StartActivity extends Activity {
                             JSONObject object,
                             GraphResponse response) {
                         // Application code
-                        Log.d("JSON",object.toString());
+                        JSONParser jsonParser = new JSONParser(getApplicationContext());
+                        jsonParser.parseJSON(object);
                     }
                 });
         Bundle parameters = new Bundle();
