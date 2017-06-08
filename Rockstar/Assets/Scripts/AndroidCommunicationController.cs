@@ -16,6 +16,12 @@ public class AndroidCommunicationController : MonoBehaviour {
 	private GameObject GuiLabelGO;
 
 
+
+	public GameObject object1;
+	//public SpriteRenderer spRenderer;
+	private bool visible = true;
+
+
 	void Start () { // Use this for initialization
 
 		// displays a text in the inventory section
@@ -30,6 +36,7 @@ public class AndroidCommunicationController : MonoBehaviour {
 		GuiLabelGO = GameObject.Find ("TextController");
 		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
 
+		object1 = GameObject.Find ("coins");
 
 		// code for java connection
 		AndroidJNIHelper.debug = true;
@@ -41,13 +48,37 @@ public class AndroidCommunicationController : MonoBehaviour {
 	
 
 	void Update () { // Update is called once per frame
-		
+
+
+
 	}
 
 
 	// will be called from java android
 	void javaMessageIn(string data) {
+
+		toggleObject ();
+
 		print ("ShowText :: javaMessageIn() :: " + data);
 		ShowTextScript.setText ("from Java: " + data);
 	}
+
+
+
+	
+
+
+
+	void toggleObject() {
+		if(visible) {
+			visible = false;
+		} else {
+			visible = true;
+		}
+
+		object1.SetActive (visible);
+	}
+
+
+
 }

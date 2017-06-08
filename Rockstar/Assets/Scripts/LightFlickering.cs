@@ -5,7 +5,7 @@ public class LightFlickering : MonoBehaviour {
 
 	public GameObject myWindow;
 	public SpriteRenderer spRenderer;
-	private bool visible;
+	public bool visible;
 	private int myTime;
 
 	void Start () {
@@ -19,10 +19,15 @@ public class LightFlickering : MonoBehaviour {
 
 		myTime = (int)( Time.fixedTime );	
 
-		if(myTime > 10) {
+		if(myTime > 7) {
 			toggleLight ();
 		}
 	}
+
+	public void setFromOutside() {
+		visible = false;
+	}
+
 
 	void toggleLight() {
 		if(visible) {
