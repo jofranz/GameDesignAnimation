@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.facebook.login.LoginManager;
 import com.google.android.gms.ads.AdRequest;
@@ -22,7 +23,7 @@ public class BlankFragment extends Fragment {
     private static InterstitialAd mInterstitialAd;
     private Button showAd;
     private Button sendButton;
-    private Button inapp;
+    private ImageView inapp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class BlankFragment extends Fragment {
                 ((UnityPlayerActivity)getActivity()).mUnityPlayer.UnitySendMessage("AndroidCommunication","JavaMessageIn",text);
             }
         });
-        inapp = (Button)getView().findViewById(R.id.inapp);
+        inapp = (ImageView) getView().findViewById(R.id.buy);
         inapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

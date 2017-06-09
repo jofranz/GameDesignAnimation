@@ -753,15 +753,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fred=0x7f020027;
         public static final int googleg_disabled_color_18=0x7f020028;
         public static final int googleg_standard_color_18=0x7f020029;
-        public static final int messenger_bubble_large_blue=0x7f02002a;
-        public static final int messenger_bubble_large_white=0x7f02002b;
-        public static final int messenger_bubble_small_blue=0x7f02002c;
-        public static final int messenger_bubble_small_white=0x7f02002d;
-        public static final int messenger_button_blue_bg_round=0x7f02002e;
-        public static final int messenger_button_blue_bg_selector=0x7f02002f;
-        public static final int messenger_button_send_round_shadow=0x7f020030;
-        public static final int messenger_button_white_bg_round=0x7f020031;
-        public static final int messenger_button_white_bg_selector=0x7f020032;
+        public static final int kaufenbutton=0x7f02002a;
+        public static final int messenger_bubble_large_blue=0x7f02002b;
+        public static final int messenger_bubble_large_white=0x7f02002c;
+        public static final int messenger_bubble_small_blue=0x7f02002d;
+        public static final int messenger_bubble_small_white=0x7f02002e;
+        public static final int messenger_button_blue_bg_round=0x7f02002f;
+        public static final int messenger_button_blue_bg_selector=0x7f020030;
+        public static final int messenger_button_send_round_shadow=0x7f020031;
+        public static final int messenger_button_white_bg_round=0x7f020032;
+        public static final int messenger_button_white_bg_selector=0x7f020033;
     }
     public static final class id {
         public static final int adViewBanner=0x7f090027;
@@ -788,14 +789,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int dark=0x7f09000f;
         public static final int display_always=0x7f09001d;
         public static final int icon_only=0x7f09000b;
-        public static final int imageViewer=0x7f090032;
-        public static final int inapp=0x7f090030;
+        public static final int imageViewer=0x7f090031;
         public static final int inline=0x7f090017;
         public static final int large=0x7f09001f;
         public static final int left=0x7f09001a;
         public static final int light=0x7f090010;
         public static final int login_button=0x7f090026;
-        public static final int messenger_send_button=0x7f090031;
+        public static final int messenger_send_button=0x7f090030;
         public static final int never_display=0x7f09001e;
         public static final int none=0x7f090008;
         public static final int normal=0x7f090020;

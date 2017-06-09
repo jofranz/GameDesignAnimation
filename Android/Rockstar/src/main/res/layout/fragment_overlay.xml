@@ -20,12 +20,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="send"/>
-
-        <Button
-            android:id="@+id/inapp"
+        <ImageView
+            android:src="@drawable/kaufenbutton"
+            android:id="@+id/buy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="InApp" />
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 

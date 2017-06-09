@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Users/normen/Documents/Game Design/current Version/Android/Rockstar/src/main/aidl/com/android/vending/billing/IInAppBillingService.aidl
+ * Original file: /Users/normen/GameDesignAnimation/Android/Rockstar/src/main/aidl/com/android/vending/billing/IInAppBillingService.aidl
  */
 package com.android.vending.billing;
 /**
