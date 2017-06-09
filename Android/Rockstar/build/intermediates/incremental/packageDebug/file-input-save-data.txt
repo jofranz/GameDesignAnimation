@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 31 16:25:35 CEST 2017
+#Fri Jun 09 12:07:55 CEST 2017
 60.set=ANDROID_RESOURCE
 52.set=ASSET
 53.base=/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/resources-debug.ap_

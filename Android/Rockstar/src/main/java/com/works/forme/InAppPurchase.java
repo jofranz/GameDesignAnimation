@@ -17,6 +17,9 @@ import com.works.forme.util.IabHelper;
 import com.works.forme.util.IabResult;
 import com.works.forme.util.Purchase;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class InAppPurchase extends Activity {
 
     IInAppBillingService mService;
@@ -28,7 +31,7 @@ public class InAppPurchase extends Activity {
     private Controller contr;
 
     IabHelper mHelper;
-    private String SKU_SON_GLASSES = "son_glasses";
+    private String bottles = "bottles";
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
             = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result,
@@ -38,7 +41,7 @@ public class InAppPurchase extends Activity {
                 // Handle error
                 return;
             }
-            else if (purchase.getSku().equals(SKU_SON_GLASSES)) {
+            else if (purchase.getSku().equals(bottles)) {
                 buy.setEnabled(false);
             }
 
@@ -67,7 +70,18 @@ public class InAppPurchase extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_purchase);
         contr = new Controller();
-        contr.loadState();
+        File f = new File("UserBoughtState");
+        if (f.exists()) {
+            Log.d("File exists", "");
+        }
+        if(f.exists() && !f.isDirectory()) {
+            contr.loadState();
+        }
+        else {
+            Log.d("Save","should save");
+            contr.saveState();
+        }
+
         tag = "InAppPurchase";
 
         //final boolean blnBind = bindService(new Intent(
@@ -111,7 +125,8 @@ public class InAppPurchase extends Activity {
             return;
         }
         try {
-            mHelper.launchPurchaseFlow(this, SKU_SON_GLASSES, 10001,
+
+            mHelper.launchPurchaseFlow(this, bottles, 10001,
                     mPurchaseFinishedListener, "mypurchasetoken");
         } catch (IabHelper.IabAsyncInProgressException e) {
             e.printStackTrace();
@@ -141,4 +156,11 @@ public class InAppPurchase extends Activity {
         super.onDestroy();
     }
 
+    @Override
+    public void onBackPressed(){
+            startActivity(new Intent(InAppPurchase.this,UnityPlayerActivity.class));
+
+    }
 }
+
+

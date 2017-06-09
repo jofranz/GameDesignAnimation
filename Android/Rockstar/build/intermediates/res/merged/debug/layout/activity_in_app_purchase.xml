@@ -25,7 +25,7 @@
         tools:layout_editor_absoluteY="105dp" />
     <Button
         android:id="@+id/back"
-        android:text="Back"
+        android:text="Zrück zum Spiel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

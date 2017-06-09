@@ -16,6 +16,7 @@ class JSONParser constructor(context: Context){
         this.context = context
     }
 
+    //parse the data from the Json response from facebook
     fun parseJSON(json: JSONObject){
         var location : String? = null
         val name : String?  = json.getString("name")
@@ -30,6 +31,7 @@ class JSONParser constructor(context: Context){
         writeData(name,location)
 
     }
+    //write the data from JSON into the model
     fun writeData(name: String?,location: String?){
         var model = Model.getInstance(context!!)
         if (name != null){
@@ -46,6 +48,7 @@ class JSONParser constructor(context: Context){
                 model.location = location
             }
         }
+
     }
 
 }

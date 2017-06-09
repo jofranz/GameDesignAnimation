@@ -5,6 +5,10 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import android.R.attr.data
 import android.content.Context
+import android.R.attr.path
+import android.os.Environment
+
+
 
 
 /**
@@ -13,7 +17,7 @@ import android.content.Context
 
 class Controller constructor(){
 
-    var didbuyItems = booleanArrayOf(false,false)
+    var didbuyItems = booleanArrayOf(false,false,false)
 
 
     //###check if the article already bought###
@@ -33,7 +37,10 @@ class Controller constructor(){
     //###load Users bought Items ###
     fun saveState(){
         var filename = "UserBoughtState"
-        var fos : FileOutputStream = FileOutputStream(filename)
+        val path = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_MOVIES)
+        val file = File(path, "/" + filename)
+        var fos : FileOutputStream = FileOutputStream(file)
         for (item in didbuyItems)
             fos.write(if (item) 1 else 0)
         fos.close()
