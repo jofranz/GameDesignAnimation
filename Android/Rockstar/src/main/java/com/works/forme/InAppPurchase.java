@@ -42,6 +42,7 @@ public class InAppPurchase extends Activity {
                 return;
             }
             else if (purchase.getSku().equals(bottles)) {
+                Toast.makeText(getApplicationContext(),"Kauf erfolgreich",Toast.LENGTH_SHORT).show();
                 buy.setEnabled(false);
             }
 
