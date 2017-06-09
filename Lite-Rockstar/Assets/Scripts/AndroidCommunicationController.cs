@@ -38,12 +38,19 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 		object1 = GameObject.Find ("coins");
 
+		toggleObject ();
+
+		print("AndroidCommunicationController class started");
+
+
 		// code for java connection
 		AndroidJNIHelper.debug = true;
 		//AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
 
 		AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme.BlankFragment");
 		jo.CallStatic ("showAd");
+
+
 	}
 	
 
