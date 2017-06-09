@@ -58,7 +58,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String text = "change this";
-                ((UnityPlayerActivity)getActivity()).mUnityPlayer.UnitySendMessage("AndroidCommunication","JavaMessageIn",text);
+                ((UnityPlayerActivity)getActivity()).mUnityPlayer.UnitySendMessage("AndroidCommunication","javaMessageIn",text);
             }
         });
         inapp = (ImageView) getView().findViewById(R.id.buy);

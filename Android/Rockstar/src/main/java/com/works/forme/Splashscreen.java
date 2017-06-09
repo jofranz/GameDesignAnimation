@@ -44,7 +44,7 @@ public class Splashscreen extends Activity {
 
         }
         imgView = (ImageView) findViewById(R.id.imageViewer);
-        imgView.setImageResource(R.drawable.fred);
+        imgView.setImageResource(R.drawable.splashscreenintro);
         imgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -18,13 +18,12 @@ import com.works.forme.util.IabResult;
 import com.works.forme.util.Purchase;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
-public class InAppPurchase extends Activity {
+public class InAppPurchase extends Activity implements View.OnClickListener {
 
     IInAppBillingService mService;
     //view
-    private Button buy,back;
+    private Button bottlesBtn,passporBtn,moneyBtn,glovesBtn;
     private TextView show;
     private String tag;
     private String mPrice;
@@ -32,6 +31,9 @@ public class InAppPurchase extends Activity {
 
     IabHelper mHelper;
     private String bottles = "bottles";
+    private String money = "money";
+    private String passport = "passport";
+    private String gloves = "gloves";
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
             = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result,
@@ -42,8 +44,16 @@ public class InAppPurchase extends Activity {
                 return;
             }
             else if (purchase.getSku().equals(bottles)) {
-                Toast.makeText(getApplicationContext(),"Kauf erfolgreich",Toast.LENGTH_SHORT).show();
-                buy.setEnabled(false);
+                Toast.makeText(getApplicationContext(),"Kauf erfolgreich Flasche",Toast.LENGTH_SHORT).show();
+            }
+            else if (purchase.getSku().equals(money)) {
+                Toast.makeText(getApplicationContext(),"Kauf erfolgreich Money",Toast.LENGTH_SHORT).show();
+            }
+            else if (purchase.getSku().equals(passport)) {
+                Toast.makeText(getApplicationContext(),"Kauf erfolgreich Ausweis",Toast.LENGTH_SHORT).show();
+            }
+            else if (purchase.getSku().equals(gloves)) {
+                Toast.makeText(getApplicationContext(),"Kauf erfolgreiche Handschuhe",Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -108,40 +118,126 @@ public class InAppPurchase extends Activity {
             }
         });
 
-        buy = (Button) findViewById(R.id.buy);
-        show = (TextView) findViewById(R.id.show);
-        back = (Button)findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(InAppPurchase.this,UnityPlayerActivity.class));
+        bottlesBtn = (Button) findViewById(R.id.bottles);
+        passporBtn = (Button) findViewById(R.id.passport);
+        moneyBtn = (Button) findViewById(R.id.money);
+        glovesBtn = (Button) findViewById(R.id.gloves);
+
+        bottlesBtn.setOnClickListener(this);
+        passporBtn.setOnClickListener(this);
+        moneyBtn.setOnClickListener(this);
+        glovesBtn.setOnClickListener(this);
+    }
+    public void onClick(View v) {
+        Log.d("Test",((Button)v).getText().toString());
+       switch (((Button)v).getText().toString()){
+           case "FLASCHE":
+               if (contr.checkStateof(0)){
+                   Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+               try {
+
+                   mHelper.launchPurchaseFlow(this, bottles, 10000,
+                           mPurchaseFinishedListener, "mypurchasetoken");
+               } catch (IabHelper.IabAsyncInProgressException e) {
+                   e.printStackTrace();
+               }
+               break;
+           case "KLEINGELD":
+               if (contr.checkStateof(1)){
+                   Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+               try {
+
+                   mHelper.launchPurchaseFlow(this, money, 10001,
+                           mPurchaseFinishedListener, "mypurchasetoken");
+               } catch (IabHelper.IabAsyncInProgressException e) {
+                   e.printStackTrace();
+               }
+               break;
+           case "AUSWEIS":
+               if (contr.checkStateof(2)){
+                   Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+               try {
+
+                   mHelper.launchPurchaseFlow(this, passport, 10002,
+                           mPurchaseFinishedListener, "mypurchasetoken");
+               } catch (IabHelper.IabAsyncInProgressException e) {
+                   e.printStackTrace();
+               }
+               break;
+           case "HANDSCHUHE":
+               if (contr.checkStateof(3)){
+                   Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+               try {
+
+                   mHelper.launchPurchaseFlow(this, gloves, 10003,
+                           mPurchaseFinishedListener, "mypurchasetoken");
+               } catch (IabHelper.IabAsyncInProgressException e) {
+                   e.printStackTrace();
+               }
+               break;
+            default: {
+                return;
             }
-        });
+
+
+       }
+
 
     }
     public void buyClick(View view) {
         Log.d("It works","Bitches");
-        if (contr.checkStateof(0)){
-            Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
-            return;
-        }
-        try {
 
-            mHelper.launchPurchaseFlow(this, bottles, 10001,
-                    mPurchaseFinishedListener, "mypurchasetoken");
-        } catch (IabHelper.IabAsyncInProgressException e) {
-            e.printStackTrace();
-        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1001){
-            if (resultCode != RESULT_OK) return;
-            int responseCode = data.getIntExtra("RESPONSE_CODE",1);
-            Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode));
-            show.setText("It works");
-            contr.setElement(0);
-            contr.saveState();
+        switch (requestCode){
+            case 1000:
+                if (resultCode != RESULT_OK) return;
+                int responseCode0 = data.getIntExtra("RESPONSE_CODE",1);
+                Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode0));
+                contr.setElement(0);
+                contr.saveState();
+                bottlesBtn.setEnabled(false);
+                break;
+            case 1001:
+                if (resultCode != RESULT_OK) return;
+                int responseCode1 = data.getIntExtra("RESPONSE_CODE",1);
+                Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode1));
+                contr.setElement(0);
+                contr.saveState();
+                moneyBtn.setEnabled(false);
+                break;
+
+
+            case 1002:
+                if (resultCode != RESULT_OK) return;
+                int responseCode2 = data.getIntExtra("RESPONSE_CODE",1);
+                Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode2));
+                contr.setElement(0);
+                contr.saveState();
+                passporBtn.setEnabled(false);
+                break;
+
+
+            case 1003:
+                if (resultCode != RESULT_OK) return;
+                int responseCode3 = data.getIntExtra("RESPONSE_CODE",1);
+                Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode3));
+                contr.setElement(0);
+                contr.saveState();
+                glovesBtn.setEnabled(false);
+                break;
+
+            default:
+                return;
         }
     }
 

@@ -12,18 +12,21 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.io.File;
 import java.util.List;
 
 public class UnityPlayerActivity extends Activity
 {
 	protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
 	private BlankFragment bf;
+	private Controller con;
 
 	// Setup activity layout
 	@Override protected void onCreate (Bundle savedInstanceState)
@@ -76,6 +79,7 @@ public class UnityPlayerActivity extends Activity
 	@Override protected void onResume()
 	{
 		super.onResume();
+		con = new Controller();
 		mUnityPlayer.resume();
 		FragmentManager fm = getFragmentManager();
 
@@ -85,6 +89,24 @@ public class UnityPlayerActivity extends Activity
 		transaction.addToBackStack(BlankFragment.class.getName());
 		transaction.replace(android.R.id.content, bf, "CHANGESEEEES");
 		transaction.commit();
+
+		boolean items[]  = {false,false,false,false};
+		File f = new File("UserBoughtState");
+		if (f.exists()) {
+			con.loadState();
+			items = con.getDidbuyItems();
+		}
+		for (int i = 0;i<items.length;i++){
+			String tmp = String.valueOf(i);
+			if (items[i])
+				mUnityPlayer.UnitySendMessage("AndroidCommunication","javaMessageIn",tmp + "1");
+			else{
+				mUnityPlayer.UnitySendMessage("AndroidCommunication","javaMessageIn",tmp + "0");
+			}
+		}
+
+
+
 	}
 
 	// This ensures the layout will be correct.

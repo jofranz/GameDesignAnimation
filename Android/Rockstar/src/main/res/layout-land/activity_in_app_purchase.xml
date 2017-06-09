@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.works.forme.InAppPurchase"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical">
+    <TextView
+        android:textSize="60dp"
+        android:textColor="#000"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produkte"/>
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:src="@drawable/bierflascheleer"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:src="@drawable/kleingeld"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:src="@drawable/ausweis"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:src="@drawable/handschuhe"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal">
+        <Button
+            android:id="@+id/bottles"
+            android:layout_width="135dp"
+            android:layout_height="48dp"
+            android:text="Flasche"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="454dp"
+            android:onClick="buyClick"
+            />
+        <Button
+            android:id="@+id/money"
+            android:text="Kleingeld"
+            android:layout_width="135dp"
+            android:layout_height="48dp" />
+        <Button
+            android:id="@+id/passport"
+            android:text="Ausweis"
+            android:layout_width="135dp"
+            android:layout_height="48dp" />
+        <Button
+            android:id="@+id/gloves"
+            android:text="Handschuhe"
+            android:layout_width="135dp"
+            android:layout_height="48dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

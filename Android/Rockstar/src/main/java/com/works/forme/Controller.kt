@@ -17,7 +17,7 @@ import android.os.Environment
 
 class Controller constructor(){
 
-    var didbuyItems = booleanArrayOf(false,false,false)
+    var didbuyItems = booleanArrayOf(false,false,false,false) //0 = Bottles; 1 = money; 2 =passport; 3 = cloves
 
 
     //###check if the article already bought###

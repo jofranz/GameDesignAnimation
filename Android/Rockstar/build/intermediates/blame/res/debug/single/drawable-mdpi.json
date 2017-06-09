@@ -52,6 +52,10 @@
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/messenger_bubble_small_blue.png"
     },
     {
+        "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/ausweis.png",
+        "source": "/Users/normen/GameDesignAnimation/Android/Rockstar/src/main/res/drawable-mdpi/ausweis.png"
+    },
+    {
         "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/messenger_button_send_round_shadow.png",
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/messenger_button_send_round_shadow.png"
     },
@@ -100,6 +104,10 @@
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/com_facebook_tooltip_blue_topnub.png"
     },
     {
+        "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/bierflascheleer.png",
+        "source": "/Users/normen/GameDesignAnimation/Android/Rockstar/src/main/res/drawable-mdpi/bierflascheleer.png"
+    },
+    {
         "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/messenger_bubble_large_white.png",
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/messenger_bubble_large_white.png"
     },
@@ -120,6 +128,10 @@
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/com_facebook_tooltip_black_background.9.png"
     },
     {
+        "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/kleingeld.png",
+        "source": "/Users/normen/GameDesignAnimation/Android/Rockstar/src/main/res/drawable-mdpi/kleingeld.png"
+    },
+    {
         "merged": "/Users/normen/Documents/Game Design/current Version/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/com_facebook_tooltip_black_topnub.png",
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/com_facebook_tooltip_black_topnub.png"
     },
@@ -134,6 +146,10 @@
     {
         "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/messenger_bubble_small_white.png",
         "source": "/Users/normen/.android/build-cache/4fc3389a1b45ae52d35fed461aa05b6f9048a882/output/res/drawable-mdpi/messenger_bubble_small_white.png"
+    },
+    {
+        "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/handschuhe.png",
+        "source": "/Users/normen/GameDesignAnimation/Android/Rockstar/src/main/res/drawable-mdpi/handschuhe.png"
     },
     {
         "merged": "/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/merged/debug/drawable-mdpi/com_facebook_button_send_icon.png",
