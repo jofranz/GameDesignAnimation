@@ -22,11 +22,14 @@ public class PlayerLookingDirection : MonoBehaviour {
 
 		// checks and animates player if moving
 		if (rg.position.x != prevPosX) {
+			print("anim state change 1");
 			animator.SetInteger ("AnimState", 1);
 		} else {
 			animator.SetInteger("AnimState", 0);
+			print("anim state change 0");
 		}
 			
 		prevPosX = rg.position.x;
 	}
 }
+	
