@@ -15,11 +15,11 @@ public class AndroidCommunicationController : MonoBehaviour {
 	private GuiLabel GuiLabelScript;
 	private GameObject GuiLabelGO;
 
-
+	public GameObject object0;
+	bool visible0 = false;
 
 	public GameObject object1;
-	//public SpriteRenderer spRenderer;
-	private bool visible = true;
+	bool visible1 = false;
 
 
 	void Start () { // Use this for initialization
@@ -36,9 +36,11 @@ public class AndroidCommunicationController : MonoBehaviour {
 		GuiLabelGO = GameObject.Find ("TextController");
 		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
 
+
+		object0 = GameObject.Find ("BierflascheVoll");
 		object1 = GameObject.Find ("coins");
 
-		toggleObject ();
+
 
 		print("AndroidCommunicationController class started");
 
@@ -56,35 +58,54 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 	void Update () { // Update is called once per frame
 
-
-
 	}
 
 
 	// will be called from java android
-	void javaMessageIn(string data) {
+	void JavaMessageIn(string data) {
 
-		toggleObject ();
+		// bottle coin passwort cloths
+		switch(data) {
+		case "01":
 
-		print ("ShowText :: javaMessageIn() :: " + data);
-		ShowTextScript.setText ("from Java: " + data);
-	}
+			if (visible0) {
+				visible0 = false;
+			} else {
+				visible0 = true;
+			}
 
+			print ("### visible0" + visible0);
 
+			object0.SetActive (visible0);
 
-	
+			print ("#### item0 bottle");
+			break;
+		case "11":
+			
 
+			if(visible1) {
+				visible1 = false;
+			} else {
+				visible1 = true;
+			}
 
+			print ("### visible1" + visible1);
 
-	void toggleObject() {
-		if(visible) {
-			visible = false;
-		} else {
-			visible = true;
+			object1.SetActive (visible1);
+
+			print ("#### item1 coin");
+			break;
+		default:
+			print ("#### default case");
+			break;
 		}
 
-		object1.SetActive (visible);
+
+
+		print ("### ShowText :: JavaMessageIn() :: " + data);
+		ShowTextScript.setText ("### from Java: " + data);
 	}
+
 
 
 
