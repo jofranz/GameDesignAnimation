@@ -137,7 +137,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                    return;
                }
                try {
-
+                   if (mHelper != null) mHelper.flagEndAsync();
                    mHelper.launchPurchaseFlow(this, bottles, 10000,
                            mPurchaseFinishedListener, "mypurchasetoken");
                } catch (IabHelper.IabAsyncInProgressException e) {
@@ -164,6 +164,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                }
                try {
                     Log.d("mHelper","called");
+                   if (mHelper != null) mHelper.flagEndAsync();
                    mHelper.launchPurchaseFlow(this, passport, 10002,
                            mPurchaseFinishedListener, "mypurchasetoken");
                } catch (IabHelper.IabAsyncInProgressException e) {
@@ -176,7 +177,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                    return;
                }
                try {
-
+                   if (mHelper != null) mHelper.flagEndAsync();
                    mHelper.launchPurchaseFlow(this, gloves, 10003,
                            mPurchaseFinishedListener, "mypurchasetoken");
                } catch (IabHelper.IabAsyncInProgressException e) {
