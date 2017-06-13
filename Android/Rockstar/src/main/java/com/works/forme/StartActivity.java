@@ -114,6 +114,7 @@ public class StartActivity extends Activity {
                         // Application code
                         JSONParser jsonParser = new JSONParser(getApplicationContext());
                         jsonParser.parseJSON(object);
+
                     }
                 });
         Bundle parameters = new Bundle();

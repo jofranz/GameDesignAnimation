@@ -39,6 +39,8 @@ public class UnityPlayerActivity extends Activity
 		mUnityPlayer = new UnityPlayer(this);
 		setContentView(mUnityPlayer);
 		mUnityPlayer.requestFocus();
+		Model model = Model.Companion.getInstance(getApplicationContext());
+		mUnityPlayer.UnitySendMessage("AndroidCommunication","SendFullNameToUnity", model.getFirstname() + model.getSecondname());
 
 	}
 	public UnityPlayer getmUnityPlayer(){

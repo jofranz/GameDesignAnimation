@@ -21,6 +21,7 @@ class Model
     companion object
     {
         private var instance: Model? = null
+
         fun getInstance(context: Context): Model
         {
             if(instance == null)
