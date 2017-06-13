@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jun 09 19:08:17 CEST 2017
+#Tue Jun 13 08:21:22 CEST 2017
 122.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-mdpi-v4/ausweis.png
 60.set=ANDROID_RESOURCE
 52.set=ANDROID_RESOURCE
@@ -17,9 +17,9 @@
 99.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-mdpi-v4/app_icon.png
 100.set=ANDROID_RESOURCE
 106.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
-52.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/fragment_overlay.xml
+52.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/splashscreenintro.png
 62.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main
-59.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/activity_in_app_purchase.xml
+59.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/com_facebook_button_send_icon.png
 69.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 9.set=ASSET
 113.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
@@ -29,7 +29,7 @@
 76.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main
 51.set=ANDROID_RESOURCE
 43.set=ASSET
-105.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
+105.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/messenger_button_send_white_large.xml
 35.set=JAVA_RESOURCE
 27.set=ANDROID_RESOURCE
 68.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/com_facebook_button_like_background.xml
@@ -43,7 +43,7 @@
 21.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_black_topnub.png
 119.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/assets/debug/bin/Data/globalgamemanagers.assets
 28.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/messenger_button_blue_bg_round.xml
-75.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/common_google_signin_btn_icon_light_normal.xml
+75.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png
 8.set=ASSET
 1.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main
 35.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar/error_prone/Annotations.gwt.xml
@@ -72,7 +72,7 @@
 105.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 51.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/com_facebook_activity_layout.xml
 7.set=ASSET
-58.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/com_facebook_button_send_icon.png
+58.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/activity_in_app_purchase.xml
 68.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 112.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/assets/debug
 11.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_topnub.png
@@ -97,7 +97,7 @@
 20.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/com_facebook_tooltip_bubble.xml
 118.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout-land/activity_in_app_purchase.xml
 27.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/resources.arsc
-74.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png
+74.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/common_google_signin_btn_icon_light_normal.xml
 6.set=ANDROID_RESOURCE
 34.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
 0.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main
@@ -137,7 +137,7 @@
 74.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 31.set=JAVA_RESOURCE
 23.set=ANDROID_RESOURCE
-103.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png
+103.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/common_full_open_on_phone.png
 15.set=ANDROID_RESOURCE
 93.set=JAVA_RESOURCE
 19.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/assets/debug/bin/Data/Managed/mscorlib.dll
@@ -191,7 +191,7 @@
 73.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar
 21.set=ANDROID_RESOURCE
 13.set=JAVA_RESOURCE
-102.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/common_full_open_on_phone.png
+102.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png
 91.set=ANDROID_RESOURCE
 83.set=ANDROID_RESOURCE
 109.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/com_facebook_button_login_silver_background.xml
@@ -296,13 +296,13 @@ count=123
 115.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 14.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png
 24.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
-61.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png
+61.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/messenger_button_white_bg_selector.xml
 71.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 78.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 100.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/messenger_bubble_large_blue.png
 71.set=ANDROID_RESOURCE
 63.set=ANDROID_RESOURCE
-107.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/messenger_button_send_white_large.xml
+107.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/splash_screen.xml
 55.set=ANDROID_RESOURCE
 31.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar
 63.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png
@@ -339,17 +339,17 @@ count=123
 100.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 102.set=ANDROID_RESOURCE
 107.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
-53.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/splashscreenintro.png
+53.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/fragment_overlay.xml
 63.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 114.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/assets/debug
 13.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar/kotlin/kotlin.kotlin_builtins
 23.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
-60.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable/messenger_button_white_bg_selector.xml
+60.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png
 70.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 77.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main
 61.set=ANDROID_RESOURCE
 53.set=ANDROID_RESOURCE
-106.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/splash_screen.xml
+106.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
 45.set=ANDROID_RESOURCE
 30.base=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/res/resources-debug.ap_
 62.file=/Users/normen/GameDesignAnimation/Android/Rockstar/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libunity.so

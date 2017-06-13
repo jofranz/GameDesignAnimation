@@ -131,7 +131,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         Log.d("Test",((Button)v).getText().toString());
        switch (((Button)v).getText().toString()){
-           case "FLASCHE":
+           case "Flasche":
                if (contr.checkStateof(0)){
                    Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
                    return;
@@ -144,7 +144,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                    e.printStackTrace();
                }
                break;
-           case "KLEINGELD":
+           case "Kleingeld":
                if (contr.checkStateof(1)){
                    Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
                    return;
@@ -157,20 +157,20 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                    e.printStackTrace();
                }
                break;
-           case "AUSWEIS":
+           case "Ausweis":
                if (contr.checkStateof(2)){
                    Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
                    return;
                }
                try {
-
+                    Log.d("mHelper","called");
                    mHelper.launchPurchaseFlow(this, passport, 10002,
                            mPurchaseFinishedListener, "mypurchasetoken");
                } catch (IabHelper.IabAsyncInProgressException e) {
                    e.printStackTrace();
                }
                break;
-           case "HANDSCHUHE":
+           case "Handschuhe":
                if (contr.checkStateof(3)){
                    Toast.makeText(getApplicationContext(),"You bought this already",Toast.LENGTH_SHORT).show();
                    return;
@@ -198,6 +198,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("Tag",String.valueOf(resultCode));
         switch (requestCode){
             case 1000:
                 if (resultCode != RESULT_OK) return;
