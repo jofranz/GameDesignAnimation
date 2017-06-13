@@ -199,7 +199,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d("Tag",String.valueOf(resultCode));
+        Log.d("Tag",String.valueOf(requestCode));
         switch (requestCode){
             case 1000:
                 if (resultCode != RESULT_OK) return;

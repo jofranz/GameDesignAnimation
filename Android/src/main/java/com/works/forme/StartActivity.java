@@ -7,6 +7,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -29,7 +30,7 @@ import org.json.JSONObject;
 
 public class StartActivity extends Activity {
 
-    private Button startGame;
+    private ImageView startGame;
     private CallbackManager callbackManager;
     private LoginButton loginButton;
     private AdView mAdView;
@@ -91,7 +92,7 @@ public class StartActivity extends Activity {
 
 
         // ### UI initialization ###
-        startGame = (Button) findViewById(R.id.start_game);
+        startGame = (ImageView) findViewById(R.id.start_game);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
