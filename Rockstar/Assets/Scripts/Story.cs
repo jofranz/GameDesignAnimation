@@ -7,6 +7,9 @@ public class Story : MonoBehaviour {
 	private GameObject mTextControllerGO;
 	private GuiBox mGuiBox;
 
+	private int mTextPos = 0;
+	private bool mFirstStartTrue = true;
+
 	// Use this for initialization
 	void Start () {
 
@@ -15,23 +18,51 @@ public class Story : MonoBehaviour {
 		mGuiBox = mTextControllerGO.GetComponent<GuiBox> ();
 
 
-		mGuiBox.setTextInBox ("text von story.cs");
+
+		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 1. Text");
+		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 2. Text");
+		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 3. Text");
+
+	
+
 		mGuiBox.showBox (true);
+
+
 	}
 	
 	// Update is called once per fram
 	void Update () {
+		
+		prepareText ();
+	}
 
-		if(SingletonData.Instance.globalScreenIsVisable) {
+	void prepareText() {
+		if(mFirstStartTrue || SingletonData.Instance.globalScreenIsVisable == true) {
 			print ("bildschirm ist frei");
+			mFirstStartTrue = false;
 			SingletonData.Instance.globalScreenIsVisable = false;
-			mGuiBox.setTextInBox ("text zwei von story");
+
+
+
+			returnTextFromBeginning ();
 		} 
+	}
 
 
-		if (false) {
+	void returnTextFromBeginning() {
+
+		print (mGuiBox.mStoryActionArrayList.Count + " > " + mTextPos);
+
+		if(mGuiBox.mStoryActionArrayList.Count > mTextPos) { 
+			mGuiBox.showBox (true);
+			mGuiBox.setTextInBox (mGuiBox.mStoryActionArrayList[mTextPos] );
+
+
+
+			mTextPos++;
+		} else {
 			mGuiBox.showBox (false);
+			print ("else block");
 		}
-
 	}
 }

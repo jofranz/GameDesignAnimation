@@ -13,11 +13,9 @@ using UnityEngine;
 public class GuiBox : MonoBehaviour {
 
 	public bool mShowBox = false;
-	private string textBoxContent = "change this via setTextBox() \nnew line? \n ";
+	private string textBoxContent = "";
 	public GUIStyle customGuiStyle;
-
-
-
+	public List<string> mStoryActionArrayList = new List<string> ();
 
 	// Use this for initialization
 	void Start () {
@@ -64,8 +62,7 @@ public class GuiBox : MonoBehaviour {
 
 			// on click disable box
 			if (Input.GetMouseButtonDown (0) ) {
-				setTextInBox ("zweiter text");
-				SingletonData.Instance.myGlobalString = "from guibox klick";
+				//setTextInBox ("zweiter text");
 				SingletonData.Instance.globalScreenIsVisable = true;
 			}
 		}

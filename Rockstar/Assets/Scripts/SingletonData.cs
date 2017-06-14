@@ -6,7 +6,10 @@ public class SingletonData : Singleton<SingletonData>
 {
 
 
-	public string myGlobalString = "whatever";
-	public bool globalScreenIsVisable = false;
+	public bool globalScreenIsVisable = true;
+
+
+
+
 
 }
