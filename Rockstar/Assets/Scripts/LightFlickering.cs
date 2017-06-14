@@ -8,6 +8,11 @@ public class LightFlickering : MonoBehaviour {
 	public bool mVisible;
 	private float mNextActionTime = 0.0f;
 	private float mTimePeriod = 1.0f;
+	public int mPeriodMin = 1;
+	public int mPeriodMax = 3;
+	public int mDurationMin = 0;
+	public int mDuratoinMax = 5;
+
 
 	void Start () {
 		spRenderer = gameObject.GetComponent<SpriteRenderer> ();
@@ -16,11 +21,11 @@ public class LightFlickering : MonoBehaviour {
 
 	void Update () {
 		// set time period
-		mTimePeriod = Random.Range (1, 3);
+		mTimePeriod = Random.Range (mPeriodMin, mPeriodMax);
 
 		// timer
 		if(Time.time > mNextActionTime) {
-			mNextActionTime = mTimePeriod + mNextActionTime + Random.Range (0, 4);
+			mNextActionTime = mTimePeriod + mNextActionTime + Random.Range (mDuratoinMax, mDuratoinMax);
 
 			toggleLight ();
 		}
