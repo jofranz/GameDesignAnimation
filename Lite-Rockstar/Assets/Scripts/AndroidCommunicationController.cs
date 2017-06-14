@@ -21,12 +21,19 @@ public class AndroidCommunicationController : MonoBehaviour {
 	public GameObject object1;
 	bool visible1 = false;
 
+	string aFullName = "";
+
 
 	void Start () { // Use this for initialization
 
 		// displays a text in the inventory section
 		TextControllerGO = GameObject.Find ("TextController");
 		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
+
+
+		GuiBoxScript = TextControllerGO.GetComponent<GuiBox> ();
+
+
 
 		// displays a gui box which can be set visible or invisible
 		GuiBoxGO = GameObject.Find ("TextController");
@@ -40,9 +47,15 @@ public class AndroidCommunicationController : MonoBehaviour {
 		object0 = GameObject.Find ("BierflascheVoll");
 		object1 = GameObject.Find ("coins");
 
+		object0.SetActive (false);
+		object1.SetActive (false);
 
 
 		print("AndroidCommunicationController class started");
+
+
+
+		// SendFullNameToUnity ("##TestFullName");
 
 
 		// code for java connection
@@ -51,8 +64,6 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 		AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme.BlankFragment");
 		jo.CallStatic ("showAd");
-
-
 	}
 	
 
@@ -62,10 +73,10 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 
 	// will be called from java android
-	void JavaMessageIn(string data) {
+	void JavaMessageIn(string aString) {
 
 		// bottle coin passwort cloths
-		switch(data) {
+		switch(aString) {
 		case "01":
 
 			if (visible0) {
@@ -101,12 +112,23 @@ public class AndroidCommunicationController : MonoBehaviour {
 		}
 
 
-
-		print ("### ShowText :: JavaMessageIn() :: " + data);
-		ShowTextScript.setText ("### from Java: " + data);
+		ShowTextScript.setText ("### buy item via JavaMessageIn() :: " + aString);
+		print ("### print:: JavaMessageIn() :: " + aString);
 	}
 
 
+	void SendFullNameToUnity(string aFullName) {
+
+		ShowTextScript.setText ("### from Java: " + aFullName);
 
 
+		GuiBoxScript.showBox (true);
+		GuiBoxScript.setTextBox ("Hallo, dein Name ist\n" + aFullName + "\nund du bist gerade ins Spiel gestartet.");
+
+		print ("### name via SendFullNameToUnity() :: " + aFullName);
+
+
+
+
+	}
 }

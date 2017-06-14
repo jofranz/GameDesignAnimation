@@ -14,9 +14,9 @@ public class ShowText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		textLabel.text = "default-leer";
+		// textLabel.text = "default-leer";
 
-		setText ("Starttext via code via setText()");
+		// setText ("Starttext via code via setText()");
 
 	}
 	

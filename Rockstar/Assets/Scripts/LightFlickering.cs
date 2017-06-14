@@ -3,40 +3,42 @@ using System.Collections;
 
 public class LightFlickering : MonoBehaviour {
 
-	public GameObject myWindow;
-	public SpriteRenderer spRenderer;
-	public bool visible;
-	private int myTime;
+	private SpriteRenderer spRenderer;
+
+	public bool mVisible;
+	private float mNextActionTime = 0.0f;
+	private float mTimePeriod = 1.0f;
 
 	void Start () {
-		// spRenderer = gameObject.GetComponent<SpriteRenderer> ();
-		//spRenderer.enabled = false;
-
-		myWindow = GameObject.Find ("Licht");
+		spRenderer = gameObject.GetComponent<SpriteRenderer> ();
 	}
 
+
 	void Update () {
+		// set time period
+		mTimePeriod = Random.Range (1, 3);
 
-		myTime = (int)( Time.fixedTime );	
+		// timer
+		if(Time.time > mNextActionTime) {
+			mNextActionTime = mTimePeriod + mNextActionTime + Random.Range (0, 4);
 
-		if(myTime > 7) {
 			toggleLight ();
 		}
 	}
 
+
 	public void setFromOutside() {
-		visible = false;
+		mVisible = false;
 	}
 
 
 	void toggleLight() {
-		if(visible) {
-			visible = false;
+		if(mVisible) {
+			mVisible = false;
 		} else {
-			visible = true;
+			mVisible = true;
 		}
 
-		myWindow.SetActive (visible);
+		spRenderer.enabled = mVisible;
 	}
-
 }	

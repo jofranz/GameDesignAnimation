@@ -21,7 +21,7 @@ public class GotoMouse : MonoBehaviour {
 		clickTarget = transform.position;
 		// print ("pos: " + playerUpperYPosition + " :: " + playerLowerYPosition);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		walkToClickPosition ();
@@ -43,7 +43,7 @@ public class GotoMouse : MonoBehaviour {
 		if (clickTarget.y < -1.97f) { //negative
 			clickTarget.y = -1.97f;
 		}
-			
+
 		transform.position = Vector2.MoveTowards (transform.position, clickTarget, speed * Time.deltaTime);
 
 		//transform.position = Vector2.MoveTowards(
