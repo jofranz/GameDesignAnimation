@@ -16,8 +16,8 @@ public class CameraFollow : MonoBehaviour {
 	void Update () {
 
 
-
-			// fixed y camera position
+	
+		// fixed y camera position
 		transform.position = new Vector3 (mTransform.position.x, 0.0f, transform.position.z);
 	
 

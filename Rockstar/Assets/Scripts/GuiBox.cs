@@ -9,11 +9,15 @@ using UnityEngine;
 */
 
 
+
 public class GuiBox : MonoBehaviour {
 
-	public bool showBoxStatus = false;
+	public bool mShowBox = false;
 	private string textBoxContent = "change this via setTextBox() \nnew line? \n ";
 	public GUIStyle customGuiStyle;
+
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,11 +35,11 @@ public class GuiBox : MonoBehaviour {
 
 
 	public void showBox(bool state) {
-		showBoxStatus = state;
+		mShowBox = state;
 	}
 		
 
-	public void setTextBox(string str) {
+	public void setTextInBox(string str) {
 		textBoxContent = str;
 	}
 
@@ -44,8 +48,10 @@ public class GuiBox : MonoBehaviour {
 	}
 
 
+
+
 	void OnGUI(){
-		if (showBoxStatus) { 
+		if (mShowBox) { 
 			
 			float xPosition = Screen.width / 4 + 400;
 			float yPosition = Screen.height / 4;
@@ -54,11 +60,13 @@ public class GuiBox : MonoBehaviour {
 		
 
 			GUI.Box (new Rect (xPosition, yPosition, boxWidth, boxHeight), 
-				textBoxContent + Time.fixedTime, customGuiStyle);
+				textBoxContent, customGuiStyle);
 
 			// on click disable box
-			if (Input.GetMouseButtonDown (0)) {
-				showBox (false);
+			if (Input.GetMouseButtonDown (0) ) {
+				setTextInBox ("zweiter text");
+				SingletonData.Instance.myGlobalString = "from guibox klick";
+				SingletonData.Instance.globalScreenIsVisable = true;
 			}
 		}
 	}

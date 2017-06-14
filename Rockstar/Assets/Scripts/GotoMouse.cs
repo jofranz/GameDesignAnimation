@@ -35,13 +35,22 @@ public class GotoMouse : MonoBehaviour {
 		}
 
 
-		if (clickTarget.y > 0.33f) { //negative
+		if (clickTarget.y > 0.33f) { 
 			clickTarget.y = 0.33f;
 		}
 
 
 		if (clickTarget.y < -1.97f) { //negative
 			clickTarget.y = -1.97f;
+		}
+
+
+		if(clickTarget.x < -17.3f) {//negative
+			clickTarget.x = -17.3f;
+		}
+
+		if(clickTarget.x > 17.3f) {
+			clickTarget.x = 17.3f;
 		}
 
 		transform.position = Vector2.MoveTowards (transform.position, clickTarget, speed * Time.deltaTime);
