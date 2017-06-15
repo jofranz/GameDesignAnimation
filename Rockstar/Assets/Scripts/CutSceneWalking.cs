@@ -27,8 +27,18 @@ public class CutSceneWalking : MonoBehaviour {
 
 		//targetPosition = new Vector3 (-1.68f, -0.1f, 0); // walks to position
 
+
+		StartCoroutine( FadeFromBlack() );
+
+
 	}
 
+
+
+	IEnumerator FadeFromBlack() {
+		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (-1);
+		yield return new WaitForSeconds (mFadeTime);
+	}
 
 	// Update is called once per frame
 	void Update () {

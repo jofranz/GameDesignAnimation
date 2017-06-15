@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 156495738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.82, y: -5.19, z: 0}
+  m_LocalPosition: {x: -3.98, y: -0.27, z: 0}
   m_LocalScale: {x: 1.2877195, y: 0.67651427, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1268,6 +1268,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  mStoryActionArrayList: []
 --- !u!1 &1182467752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2202,7 @@ GameObject:
   - component: {fileID: 2115374542}
   - component: {fileID: 2115374547}
   - component: {fileID: 2115374548}
+  - component: {fileID: 2115374549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2301,3 +2303,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showLabelStatus: 0
+--- !u!114 &2115374549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115374541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9052266c197541c4bbac6c10e55078dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mFadeOutTexture: {fileID: 2800000, guid: 4fc739aa6b31a15479f5a8d25cd22c79, type: 3}
+  mFadeSpeed: 0.8

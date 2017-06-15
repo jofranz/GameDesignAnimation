@@ -9,6 +9,9 @@ public class SceneMgmt : MonoBehaviour {
 	void Start () {
 		print ("SceneMgmt start");
 
+
+
+
 	}
 
 
@@ -19,8 +22,21 @@ public class SceneMgmt : MonoBehaviour {
 
 
 	void OnMouseOver() {
-		if (Input.GetMouseButtonDown (0)) {
-			SceneManager.LoadScene ("CutScene", LoadSceneMode.Single);
+		if (Input.GetMouseButtonDown(0) ) {
+
+			StartCoroutine (ChangeLevel () );
+
+
 		}
 	}
+
+
+	// fade to black
+	IEnumerator ChangeLevel() {
+		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (1);
+		yield return new WaitForSeconds (mFadeTime);
+
+		SceneManager.LoadScene ("CutScene", LoadSceneMode.Single);
+	}
+
 }
