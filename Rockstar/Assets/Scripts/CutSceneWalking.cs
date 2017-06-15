@@ -15,6 +15,7 @@ public class CutSceneWalking : MonoBehaviour {
 	private GameObject mBlackLowerGO;
 
 	private bool mPos2 = true;
+	private float mBannerSpeed = 0.8f;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +28,8 @@ public class CutSceneWalking : MonoBehaviour {
 		transform.localScale = new Vector3 (-1, 1, 1); // looks to the right
 
 
-		goToPosition (-1.73f, -0.6f);
 
+		goToPosition (-1.73f, -0.6f);
 
 		StartCoroutine( FadeFromBlack() );
 
@@ -40,14 +41,12 @@ public class CutSceneWalking : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
 		// !SingletonData.Instance.globalClickWalkingIsDisabled
 		if( true ) {
 			transform.position = Vector2.MoveTowards (transform.position, targetPosition, speed * Time.deltaTime);	
 		}
-
-
-
-
 
 		if (transform.position.x == -1.73f) {
 			print ("angekommen !!!");
@@ -55,14 +54,23 @@ public class CutSceneWalking : MonoBehaviour {
 				mPos2 = false;
 				goToPosition (5.0f, -0.6f);
 			}
-		} else if (transform.position.x == 5.0f) {
+		} 
 
-			for(float pxPos = 0; pxPos < 200; pxPos = pxPos + 0.0001f) {
-				mBlackUpperGO.transform.position = new Vector3 ( mBlackUpperGO.transform.position.y, mBlackUpperGO.transform.position.x + 5.0f, (float)pxPos );
-				mBlackLowerGO.transform.position = new Vector3 ( mBlackLowerGO.transform.position.y, mBlackLowerGO.transform.position.y + 5.0f, (float)pxPos );
-			}
+		if (transform.position.x > 4.9f) {
 
-			Destroy (this);		
+			print ("vector schieben");
+
+			//while(true) {
+				Vector2 upperVecGoal = new Vector2 (0.0f, 5.0f);
+				mBlackUpperGO.transform.position = Vector2.MoveTowards (mBlackUpperGO.transform.position, upperVecGoal, mBannerSpeed * Time.deltaTime);
+
+				Vector2 lowerVecGoal = new Vector2 (0.0f, -5.0f);
+				mBlackLowerGO.transform.position = Vector2.MoveTowards(mBlackLowerGO.transform.position, lowerVecGoal, mBannerSpeed * Time.deltaTime);
+
+					
+			//}
+			print ("DESTROYED!!!");
+			//Destroy (this);	
 		}
 
 	}
@@ -74,8 +82,7 @@ public class CutSceneWalking : MonoBehaviour {
 		yield return new WaitForSeconds (mFadeTime);
 	}
 
-	bool goToPosition(float aPosX, float aPosY) {
+	void goToPosition(float aPosX, float aPosY) {
 		targetPosition = new Vector3 (aPosX, aPosY); // walks to position
-		return true;
 	}
 }

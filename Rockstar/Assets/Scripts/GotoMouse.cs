@@ -12,8 +12,6 @@ public class GotoMouse : MonoBehaviour {
 	*/
 
 	public float mSpeed = 2.0f;
-	// public float playerUpperYPosition = 2.72f; // negative value down below
-	// public float playerLowerYPosition = 0.7f; // negative value down below
 	private Vector2 mClickTarget;
 
 	// Use this for initialization
