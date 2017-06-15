@@ -6,9 +6,22 @@ public class SingletonData : Singleton<SingletonData>
 {
 
 
-	public bool globalScreenIsVisible = true;
+	public bool globalMouseHasBeenClicked = false;
 	public bool globalClickWalkingIsDisabled = false;
 	
+
+	void Start () {
+		
+	}
+
+
+
+	void Update() {
+		if ( Input.GetMouseButtonUp (0) ) {
+			SingletonData.Instance.globalMouseHasBeenClicked = true;
+			//print ("singleton click!");
+		}
+	}
 
 
 

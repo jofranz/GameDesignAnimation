@@ -29,11 +29,16 @@ public class GotoMouse : MonoBehaviour {
 			walkToClickPosition ();
 			setPlayerPerspective ();
 		}
+			
+
 	}
 
 
 	void walkToClickPosition() {
 		if ( Input.GetMouseButton (0) ) {
+
+			// SingletonData.Instance.globalMouseHasBeenClicked = true;
+
 			mClickTarget = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		}
 
@@ -47,16 +52,15 @@ public class GotoMouse : MonoBehaviour {
 			mClickTarget.y = -1.97f;
 		}
 
-		/*
-		if(clickTarget.x < -17.3f) {//negative
-			clickTarget.x = -17.3f;
+
+		if(mClickTarget.x < -17.3f) {//negative
+			mClickTarget.x = -17.3f;
 		}
 
-		if(clickTarget.x > 17.3f) {
-			clickTarget.x = 17.3f;
+		if(mClickTarget.x > 17.3f) {
+			mClickTarget.x = 17.3f;
 		}
-
-*/
+			
 		transform.position = Vector2.MoveTowards (transform.position, mClickTarget, mSpeed * Time.deltaTime);
 	}
 
