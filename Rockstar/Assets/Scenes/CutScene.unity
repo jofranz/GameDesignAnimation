@@ -223,7 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67e2868777c0e34a925f88a6f08efec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moving: {x: 0, y: 0}
 --- !u!114 &106845527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5592d5861d8068d43a4ab6ebe4b24c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  mSpeed: 2
 --- !u!224 &106845530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -262,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.06, y: -1.39}
+  m_AnchoredPosition: {x: -1.73, y: -0.59}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &811701694
@@ -768,12 +767,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2115374541}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab1fdf60aa0fa484592ff5c3a73368e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mPlayerPosition: {fileID: 0}
+  mPlayerPosition: {fileID: 106845520}
 --- !u!114 &2115374548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466a7bf5a408f5145badee55331d407c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalScreenIsVisable: 0
+  globalScreenIsVisible: 1
+  globalClickWalkingIsDisabled: 0
 --- !u!114 &2115374550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,3 +809,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9edbc6339eba994c8208f7495498a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mDisplayGuiBox: 1

@@ -63,7 +63,7 @@ public class GuiBox : MonoBehaviour {
 			// on click disable box
 			if (Input.GetMouseButtonDown (0) ) {
 				//setTextInBox ("zweiter text");
-				SingletonData.Instance.globalScreenIsVisable = true;
+				SingletonData.Instance.globalScreenIsVisible = true;
 			}
 		}
 	}

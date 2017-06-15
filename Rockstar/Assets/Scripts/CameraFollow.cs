@@ -14,12 +14,10 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
-	
+		
 		// fixed y camera position
-		transform.position = new Vector3 (mTransform.position.x, 0.0f, transform.position.z);
-	
-
+		if( !SingletonData.Instance.globalClickWalkingIsDisabled ) {
+			transform.position = new Vector3 (mTransform.position.x, 0.0f, transform.position.z);	
+		}
 	}
 }

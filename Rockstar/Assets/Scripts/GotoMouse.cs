@@ -11,40 +11,43 @@ public class GotoMouse : MonoBehaviour {
 	 * 
 	*/
 
-	public float speed = 2.0f;
+	public float mSpeed = 2.0f;
 	// public float playerUpperYPosition = 2.72f; // negative value down below
 	// public float playerLowerYPosition = 0.7f; // negative value down below
-	private Vector2 clickTarget;
+	private Vector2 mClickTarget;
 
 	// Use this for initialization
 	void Start () {
-		clickTarget = transform.position;
+		mClickTarget = transform.position;
 		// print ("pos: " + playerUpperYPosition + " :: " + playerLowerYPosition);
 	}
 
 	// Update is called once per frame
 	void Update () {
-		walkToClickPosition ();
-		setPlayerPerspective ();
+
+		if( !SingletonData.Instance.globalClickWalkingIsDisabled ) {
+			walkToClickPosition ();
+			setPlayerPerspective ();
+		}
 	}
 
 
 	void walkToClickPosition() {
 		if ( Input.GetMouseButton (0) ) {
-			clickTarget = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			mClickTarget = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		}
 
 
-		if (clickTarget.y > 0.33f) { 
-			clickTarget.y = 0.33f;
+		if (mClickTarget.y > 0.33f) { 
+			mClickTarget.y = 0.33f;
 		}
 
 
-		if (clickTarget.y < -1.97f) { //negative
-			clickTarget.y = -1.97f;
+		if (mClickTarget.y < -1.97f) { //negative
+			mClickTarget.y = -1.97f;
 		}
 
-
+		/*
 		if(clickTarget.x < -17.3f) {//negative
 			clickTarget.x = -17.3f;
 		}
@@ -53,18 +56,17 @@ public class GotoMouse : MonoBehaviour {
 			clickTarget.x = 17.3f;
 		}
 
-		transform.position = Vector2.MoveTowards (transform.position, clickTarget, speed * Time.deltaTime);
-
-		//transform.position = Vector2.MoveTowards(
+*/
+		transform.position = Vector2.MoveTowards (transform.position, mClickTarget, mSpeed * Time.deltaTime);
 	}
 
 
 	// vertical mirror axis for player looking direction
 	void setPlayerPerspective() {
 		// checks in which direction the player is looking
-		if (transform.position.x < clickTarget.x) {
+		if (transform.position.x < mClickTarget.x) {
 			transform.localScale = new Vector3 (-1, 1, 1); // looks to the right
-		} else if (transform.position.x > clickTarget.x) {
+		} else if (transform.position.x > mClickTarget.x) {
 			transform.localScale = new Vector3 (1,1,1); // looks to the left
 		}
 	}

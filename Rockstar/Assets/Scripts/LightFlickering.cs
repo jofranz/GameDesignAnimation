@@ -11,11 +11,11 @@ public class LightFlickering : MonoBehaviour {
 	public int mPeriodMin = 1;
 	public int mPeriodMax = 3;
 	public int mDurationMin = 0;
-	public int mDuratoinMax = 5;
+	public int mDuratoinMax = 15;
 
 
 	void Start () {
-		spRenderer = gameObject.GetComponent<SpriteRenderer> ();
+		spRenderer = gameObject.GetComponent<SpriteRenderer> (); // prepare sprite renderer
 	}
 
 

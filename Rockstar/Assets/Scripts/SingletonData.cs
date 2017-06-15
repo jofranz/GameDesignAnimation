@@ -6,7 +6,9 @@ public class SingletonData : Singleton<SingletonData>
 {
 
 
-	public bool globalScreenIsVisable = true;
+	public bool globalScreenIsVisible = true;
+	public bool globalClickWalkingIsDisabled = false;
+	
 
 
 

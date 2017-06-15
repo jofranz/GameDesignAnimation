@@ -8,24 +8,25 @@ public class Story : MonoBehaviour {
 	private GuiBox mGuiBox;
 
 	private int mTextPos = 0;
-	private bool mFirstStartTrue = true;
+	public bool mDisplayGuiBox = true;
 
 	// Use this for initialization
 	void Start () {
 
-		print("Story.cs start");
+		print("Story.cs start method");
 		mTextControllerGO = GameObject.Find ("TextController");
 		mGuiBox = mTextControllerGO.GetComponent<GuiBox> ();
 
-
+		SingletonData.Instance.globalClickWalkingIsDisabled = false;
 
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 1. Text");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 2. Text");
+		mGuiBox.mStoryActionArrayList.Add ("_Action:testStr1");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 3. Text");
 
 	
 
-		mGuiBox.showBox (true);
+		//mGuiBox.showBox (true);
 
 
 	}
@@ -33,16 +34,10 @@ public class Story : MonoBehaviour {
 	// Update is called once per fram
 	void Update () {
 		
-		prepareText ();
-	}
-
-	void prepareText() {
-		if(mFirstStartTrue || SingletonData.Instance.globalScreenIsVisable == true) {
+		if( mDisplayGuiBox && SingletonData.Instance.globalScreenIsVisible == true ) {
 			print ("bildschirm ist frei");
-			mFirstStartTrue = false;
-			SingletonData.Instance.globalScreenIsVisable = false;
-
-
+			mDisplayGuiBox = false;
+			SingletonData.Instance.globalScreenIsVisible = false;
 
 			returnTextFromBeginning ();
 		} 
@@ -51,13 +46,21 @@ public class Story : MonoBehaviour {
 
 	void returnTextFromBeginning() {
 
-		print (mGuiBox.mStoryActionArrayList.Count + " > " + mTextPos);
-
+		// print (mGuiBox.mStoryActionArrayList.Count + " > " + mTextPos);
 		if(mGuiBox.mStoryActionArrayList.Count > mTextPos) { 
-			mGuiBox.showBox (true);
-			mGuiBox.setTextInBox (mGuiBox.mStoryActionArrayList[mTextPos] );
 
 
+			if( mGuiBox.mStoryActionArrayList[mTextPos].StartsWith("_Action:") ) {
+				print( "Action Str: " + mGuiBox.mStoryActionArrayList[mTextPos].Substring(8) );
+				handleAction( mGuiBox.mStoryActionArrayList[mTextPos].Substring(8) );
+				mGuiBox.showBox (false);
+				mDisplayGuiBox = false;
+				SingletonData.Instance.globalScreenIsVisible = true;
+
+			} else {
+				mGuiBox.showBox (true);
+				mGuiBox.setTextInBox (mGuiBox.mStoryActionArrayList[mTextPos] );
+			}
 
 			mTextPos++;
 		} else {
@@ -65,4 +68,22 @@ public class Story : MonoBehaviour {
 			print ("else block");
 		}
 	}
+
+	void handleAction(string aActionStr) {
+		print (aActionStr);
+
+
+		switch (aActionStr) {
+
+			case "testStr1":
+				print("testStr1 case");
+				break;
+
+			default:
+				print("switch default action string");
+				break;
+		}
+
+	}
+
 }

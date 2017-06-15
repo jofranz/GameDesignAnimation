@@ -16,41 +16,47 @@ public class CutSceneWalking : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		rg = GetComponent<Rigidbody2D>();
 
-		// targetPosition = new Vector3 (-3.3f, -1.17f, 0);
-
 		transform.localScale = new Vector3 (-1, 1, 1); // looks to the right
-		//targetPosition = new Vector3 (3.5f, -0.36f, 0); // walks to position
 
-		if (goToPosition (3.5f, -0.36f)) {
-			goToPosition (-3.3f, -1.17f);
-		}
+		SingletonData.Instance.globalClickWalkingIsDisabled = true;
 
-		//targetPosition = new Vector3 (-1.68f, -0.1f, 0); // walks to position
+
+
 
 
 		StartCoroutine( FadeFromBlack() );
 
+		SingletonData.Instance.globalClickWalkingIsDisabled = false;
 
 	}
+		
+
+	// Update is called once per frame
+	void Update () {
+
+		// !SingletonData.Instance.globalClickWalkingIsDisabled
+		if( true ) {
+			transform.position = Vector2.MoveTowards (transform.position, targetPosition, speed * Time.deltaTime);	
+		}
 
 
+
+		goToPosition (-1.73f, -0.6f);
+
+		if (transform.position.x != -1.73f) {
+			print ("angekommen");
+			//goToPosition (-3.73f, -0.6f);
+		}
+
+	}
 
 	IEnumerator FadeFromBlack() {
 		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (-1);
 		yield return new WaitForSeconds (mFadeTime);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		transform.position = Vector2.MoveTowards (transform.position, targetPosition, speed * Time.deltaTime);
-	}
-
-
-	bool goToPosition(float posX, float posY) {
-		if (transform.position.x == posX) {
-			return true;
-		} 
-		targetPosition = new Vector3 (posX, posY, 0); // walks to position
+	bool goToPosition(float aPosX, float aPosY) {
+		targetPosition = new Vector3 (aPosX, aPosY); // walks to position
 		return true;
 	}
 }
