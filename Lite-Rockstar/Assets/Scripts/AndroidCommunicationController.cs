@@ -74,11 +74,11 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 
 		// code for java connection
-		AndroidJNIHelper.debug = true;
+		//AndroidJNIHelper.debug = true;
 		//AndroidJavaClass jc = new AndroidJavaClass("com.works.forme");
 
-		AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme.BlankFragment");
-		jo.CallStatic ("showAd");
+		//AndroidJavaObject jo = new AndroidJavaObject ("com.works.forme.BlankFragment");
+		//jo.CallStatic ("showAd");
 	}
 	
 

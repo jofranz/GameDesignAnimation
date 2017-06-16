@@ -3,40 +3,50 @@ using System.Collections;
 
 public class LightFlickering : MonoBehaviour {
 
-	public GameObject myWindow;
-	public SpriteRenderer spRenderer;
-	public bool visible;
-	private int myTime;
+	private SpriteRenderer mSpRenderer;
+	private GameObject mBeerFullGO;
+
+	public bool mVisible;
+	private float mNextActionTime = 0.0f;
+	private float mTimePeriod = 1.0f;
+	public float mPeriodMin = 1.0f;
+	public float mPeriodMax = 3.0f;
+	public float mDurationMin = 3.0f;
+	public float mDuratoinMax = 15.0f;
+
 
 	void Start () {
-		// spRenderer = gameObject.GetComponent<SpriteRenderer> ();
-		//spRenderer.enabled = false;
-
-		myWindow = GameObject.Find ("Licht");
+		mSpRenderer = gameObject.GetComponent<SpriteRenderer> (); // prepare sprite renderer
+		mBeerFullGO = GameObject.Find ("BierflascheVoll");
+		mBeerFullGO.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 
+
 	void Update () {
+		// set time period
+		mTimePeriod = Random.Range (mPeriodMin, mPeriodMax);
 
-		myTime = (int)( Time.fixedTime );	
+		// timer
+		if(Time.time > mNextActionTime) {
+			mNextActionTime = mTimePeriod + mNextActionTime + Random.Range (mDuratoinMax, mDuratoinMax);
 
-		if(myTime > 7) {
 			toggleLight ();
 		}
 	}
 
+
 	public void setFromOutside() {
-		visible = false;
+		mVisible = false;
 	}
 
 
 	void toggleLight() {
-		if(visible) {
-			visible = false;
+		if(mVisible) {
+			mVisible = false;
 		} else {
-			visible = true;
+			mVisible = true;
 		}
 
-		myWindow.SetActive (visible);
+		mSpRenderer.enabled = mVisible;
 	}
-
 }	

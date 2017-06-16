@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutSceneWalking : MonoBehaviour {
 
-	public float speed = 2.0f;
+	public float mSpeed = 2.0f;
 	private Vector2 targetPosition;
 
 	private Rigidbody2D rg;
@@ -42,13 +42,13 @@ public class CutSceneWalking : MonoBehaviour {
 		mCameraFollowScript = mCamera.GetComponent<CameraFollow> ();
 
 
-		mCameraFollowScript.enabled = false;
+		mCameraFollowScript.enabled = true;
 
 		goToPosition (-1.73f, -0.6f);
 
 
 
-		SingletonData.Instance.globalClickWalkingIsDisabled = false;
+		SingletonData.Instance.globalClickWalkingIsDisabled = true;
 
 	}
 		
@@ -60,20 +60,23 @@ public class CutSceneWalking : MonoBehaviour {
 
 		// !SingletonData.Instance.globalClickWalkingIsDisabled
 		if( mPlayerAutoWalk ) {
-			transform.position = Vector2.MoveTowards (transform.position, targetPosition, speed * Time.deltaTime);	
+			transform.position = Vector2.MoveTowards (transform.position, targetPosition, mSpeed * Time.deltaTime);	
 		}
 
 		if (transform.position.x == -1.73f) {
-			print ("angekommen !!!");
+			print ("##CutSceneWalking.cs: angekommen !!!");
 			if(mPos2) {
 				mPos2 = false;
+				SingletonData.Instance.globalClicksAllowed = true;
+
 				goToPosition (5.0f, -0.6f);
 			}
 		} 
 
 
 		// move cinema bars away and destroy gameobject
-		if (SingletonData.Instance.globalStoryMoveCinemaBars && transform.position.x > 4.9f) {
+		// SingletonData.Instance.globalStoryMoveCinemaBars && transform.position.x > 4.9f
+		if (SingletonData.Instance.globalStoryMoveCinemaBars) {
 			
 			Vector2 upperVecGoal = new Vector2 (0.0f, 5.0f);
 			mBlackUpperGO.transform.position = Vector2.MoveTowards (mBlackUpperGO.transform.position, upperVecGoal, mBannerSpeed * Time.deltaTime);
@@ -82,10 +85,17 @@ public class CutSceneWalking : MonoBehaviour {
 			mBlackLowerGO.transform.position = Vector2.MoveTowards(mBlackLowerGO.transform.position, lowerVecGoal, mBannerSpeed * Time.deltaTime);
 
 
-			if(mBlackUpperGO.transform.position.y > 4.9f) {
+			//  mBlackUpperGO.transform.position.x < -7.9f
+			if( transform.position.x < -7.9f) {
 				mPlayerAutoWalk = false;
-				print ("DESTROYED cutscenewalking!!!");
+
 				mCameraFollowScript.enabled = true;
+
+				SingletonData.Instance.globalStoryPlayerArrivedMinusX8 = true;
+				SingletonData.Instance.globalClicksAllowed = true;
+
+
+				print ("##CutSceneWalking.cs: DESTROYED cutscenewalking!!!");
 				Destroy (this);
 			}
 		}
@@ -93,7 +103,7 @@ public class CutSceneWalking : MonoBehaviour {
 
 
 	IEnumerator FadeFromBlack() {
-		print ("fadeded!!!??");
+		print ("##CutSceneWalking.cs: fadeded!!!??");
 		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (-1);
 		yield return new WaitForSeconds (3);
 	}

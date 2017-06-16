@@ -36,11 +36,11 @@ public class ItemInteraction : MonoBehaviour {
 	void Update () {
 		if (mIsPressed) {
 			mTimePassed = Time.time - mStartTime;
-			print ("timePassed: " + mTimePassed);
+			// print ("##ItemInteraction.cs: timePassed: " + mTimePassed);
 
 			// zeit abgelaufen?
 			if ((mTimePassed > mPressDuration) ) {
-				print ("Sekunde/n abgelaufen");
+				//print ("##ItemInteraction.cs: Sekunde/n abgelaufen");
 
 				mShowTextScript.setText (mTargetName + " long pressed " + Time.time);
 
@@ -52,28 +52,35 @@ public class ItemInteraction : MonoBehaviour {
 
 	void OnMouseOver() {
 
-		if (Input.GetMouseButtonDown (0)) {
+		if (SingletonData.Instance.globalClicksAllowed && Input.GetMouseButtonDown (0)) {
 
 			if (mStartTime == 0.0F) {
 				mStartTime = Time.time;
-				print ("time set");
+				print ("##ItemInteraction.cs: time set");
 			}
 
 			mIsPressed = true;
 
-			print ("startTime: " + mStartTime + " pressDuration: " + mPressDuration + " timePassed: " + mTimePassed);
+			//print ("##ItemInteraction.cs: startTime: " + mStartTime + " pressDuration: " + mPressDuration + " timePassed: " + mTimePassed);
 
-			print ("clicked once VIA THIS");
+			//print ("##ItemInteraction.cs: clicked once VIA THIS");
 
 			mGuiBoxScript.showBox (true);
-			mShowTextScript.setText (mTargetName + " angeklickt " + Time.time);
+			// mShowTextScript.setText (mTargetName + " angeklickt " + Time.time);
+			print ("## ItemInteraction.cs : " +  mTargetName + " angeklickt " + Time.time);
 
 
+			switch (mTargetName) {
+				case "BierflascheVoll":
+					print ("##ItemInteraction.cs: BierflascheVoll case");
+					SingletonData.Instance.globalStoryBeerClicked = true;
+					SingletonData.Instance.globalStoryInDalogue = true;
 
-			// code for java connection
-			AndroidJNIHelper.debug = true;
-			AndroidJavaClass jc = new AndroidJavaClass("com.works.forme.BlankFragment");
-			jc.CallStatic ("showAd");
+					break;
+
+				default:
+					break;
+			}
 		} 
 
 
@@ -91,6 +98,6 @@ public class ItemInteraction : MonoBehaviour {
 	void resetTimer() {
 		mIsPressed = false;
 		mStartTime = 0.0F;
-		print ("resetTimer");
+		//print ("##ItemInteraction.cs: resetTimer");
 	}
 }

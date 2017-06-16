@@ -19,7 +19,7 @@ public class GuiBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print ("guiBOX start");
+		print ("guiBox.cs: started");
 
 		customGuiStyle.fontSize = 30;
 		
@@ -51,8 +51,8 @@ public class GuiBox : MonoBehaviour {
 	void OnGUI(){
 		if (mShowBox) { 
 			
-			float xPosition = Screen.width / 4 + 400;
-			float yPosition = Screen.height / 4;
+			float xPosition = Screen.width / 6;
+			float yPosition = Screen.height / 6;
 			float boxWidth = Screen.width / 2;
 			float boxHeight = Screen.height / 2;
 		

@@ -18,7 +18,7 @@ public class GuiLabel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print ("guiLABEL start");
+		print ("## GuiLabel.cs: started");
 	}
 	
 	// Update is called once per frame

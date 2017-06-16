@@ -4,6 +4,7 @@ using System.Collections;
 public class LightFlickering : MonoBehaviour {
 
 	private SpriteRenderer mSpRenderer;
+	private GameObject mBeerFullGO;
 
 	public bool mVisible;
 	private float mNextActionTime = 0.0f;
@@ -16,6 +17,8 @@ public class LightFlickering : MonoBehaviour {
 
 	void Start () {
 		mSpRenderer = gameObject.GetComponent<SpriteRenderer> (); // prepare sprite renderer
+		mBeerFullGO = GameObject.Find ("BierflascheVoll");
+		mBeerFullGO.GetComponent<SpriteRenderer> ().enabled = false;
 	}
 
 
