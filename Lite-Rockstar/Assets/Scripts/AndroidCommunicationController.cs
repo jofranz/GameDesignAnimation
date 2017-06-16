@@ -5,51 +5,66 @@ using UnityEngine;
 public class AndroidCommunicationController : MonoBehaviour {
 
 
+	// labels
+	private ShowText mShowTextScript;
+	private GameObject mTextControllerGO;
 
-	private ShowText ShowTextScript;
-	private GameObject TextControllerGO;
+	private GuiBox mGuiBoxScript;
+	private GameObject mGuiBoxGO;
 
-	private GuiBox GuiBoxScript;
-	private GameObject GuiBoxGO;
+	private GuiLabel mGuiLabelScript;
+	private GameObject mGuiLabelGO;
 
-	private GuiLabel GuiLabelScript;
-	private GameObject GuiLabelGO;
 
-	public GameObject object0;
-	bool visible0 = false;
+	// items
+	private GameObject mObject0;
+	private bool mVisible0 = false;
 
-	public GameObject object1;
-	bool visible1 = false;
+	private GameObject mObject1;
+	private bool mVisible1 = false;
 
-	string aFullName = "";
+	private GameObject mObject2;
+	private bool mVisible2 = false;
+
+	private GameObject mObject3;
+	private bool mVisible3 = false;
+
+
+	//name
+	private string mFullName = "";
 
 
 	void Start () { // Use this for initialization
 
 		// displays a text in the inventory section
-		TextControllerGO = GameObject.Find ("TextController");
-		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
+		mTextControllerGO = GameObject.Find ("TextController");
+		mShowTextScript = mTextControllerGO.GetComponent<ShowText>();
 
-
-		GuiBoxScript = TextControllerGO.GetComponent<GuiBox> ();
-
-
+		mGuiBoxScript = mTextControllerGO.GetComponent<GuiBox> ();
 
 		// displays a gui box which can be set visible or invisible
-		GuiBoxGO = GameObject.Find ("TextController");
-		GuiBoxScript = GuiBoxGO.GetComponent<GuiBox> ();
+		mGuiBoxGO = GameObject.Find ("TextController");
+		mGuiBoxScript = mGuiBoxGO.GetComponent<GuiBox> ();
 
 		// displays a debug console text line in the left upper corner
-		GuiLabelGO = GameObject.Find ("TextController");
-		GuiLabelScript = GuiLabelGO.GetComponent<GuiLabel> ();
+		mGuiLabelGO = GameObject.Find ("TextController");
+		mGuiLabelScript = mGuiLabelGO.GetComponent<GuiLabel> ();
 
 
-		object0 = GameObject.Find ("BierflascheVoll");
-		object1 = GameObject.Find ("coins");
+		mObject0 = GameObject.Find ("BierflascheVoll");
+		mObject0.SetActive (false);
 
-		object0.SetActive (false);
-		object1.SetActive (false);
 
+		mObject1 = GameObject.Find ("coins");
+		mObject1.SetActive (false);
+
+
+		mObject2 = GameObject.Find ("Ausweis");
+		mObject2.SetActive (false);
+
+
+		mObject3 = GameObject.Find ("Handschuhe");
+		mObject3.SetActive (false);
 
 		print("AndroidCommunicationController class started");
 
@@ -73,62 +88,59 @@ public class AndroidCommunicationController : MonoBehaviour {
 
 
 	// will be called from java android
-	void JavaMessageIn(string aString) {
+	public void JavaMessageIn(string aString) {
 
-		// bottle coin passwort cloths
+		// 0bottle 1coin 2passwort 3cloths
 		switch(aString) {
 		case "01":
 
-			if (visible0) {
-				visible0 = false;
-			} else {
-				visible0 = true;
-			}
+			print ("### visible0" + mVisible0);
 
-			print ("### visible0" + visible0);
-
-			object0.SetActive (visible0);
-
-			print ("#### item0 bottle");
+				mObject0.SetActive (true);
 			break;
+
 		case "11":
-			
 
-			if(visible1) {
-				visible1 = false;
-			} else {
-				visible1 = true;
-			}
+			print ("### visible1" + mVisible1);
 
-			print ("### visible1" + visible1);
-
-			object1.SetActive (visible1);
+				mObject1.SetActive (true);
 
 			print ("#### item1 coin");
 			break;
+
+
+		case "21":
+
+			print ("### visible2" + mVisible2);
+
+				mObject2.SetActive (true);
+
+			print ("#### item2 ausweis");
+			break;
+
+		case "31":
+
+			print ("### visible3" + mVisible3);
+
+				mObject3.SetActive (true);
+
+			print ("#### item3 ausweis");
+			break;
+
 		default:
 			print ("#### default case");
 			break;
 		}
 
 
-		ShowTextScript.setText ("### buy item via JavaMessageIn() :: " + aString);
+		mShowTextScript.setText ("### buy item via JavaMessageIn() :: " + aString);
 		print ("### print:: JavaMessageIn() :: " + aString);
 	}
 
 
-	void SendFullNameToUnity(string aFullName) {
+	public void SendFullNameToUnity(string aFullName) {
 
-		ShowTextScript.setText ("### from Java: " + aFullName);
-
-
-		GuiBoxScript.showBox (true);
-		GuiBoxScript.setTextBox ("Hallo, dein Name ist\n" + aFullName + "\nund du bist gerade ins Spiel gestartet.");
-
-		print ("### name via SendFullNameToUnity() :: " + aFullName);
-
-
-
-
+		mGuiBoxScript.showBox (true);
+		mGuiBoxScript.setTextBox ("Hallo, dein Name ist\n" + aFullName + "\nund du bist gerade ins Spiel gestartet.");
 	}
 }

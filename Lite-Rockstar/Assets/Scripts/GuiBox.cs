@@ -49,7 +49,6 @@ public class GuiBox : MonoBehaviour {
 
 
 			float xPosition = 50 ;
-			//float xPosition = Screen.width / 4 ;
 			float yPosition = 50;
 			float boxWidth = Screen.width / 2;
 			float boxHeight = Screen.height / 2;
@@ -60,7 +59,7 @@ public class GuiBox : MonoBehaviour {
 
 			// on click disable box
 			if (Input.GetMouseButtonDown (0)) {
-				showBox (false);
+				//showBox (false);
 			}
 		}
 	}
