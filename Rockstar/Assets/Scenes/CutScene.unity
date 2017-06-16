@@ -1095,7 +1095,6 @@ GameObject:
   - component: {fileID: 2115374547}
   - component: {fileID: 2115374548}
   - component: {fileID: 2115374550}
-  - component: {fileID: 2115374549}
   - component: {fileID: 2115374551}
   - component: {fileID: 2115374552}
   m_Layer: 0
@@ -1199,24 +1198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showLabelStatus: 0
---- !u!114 &2115374549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2115374541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466a7bf5a408f5145badee55331d407c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalMouseHasBeenClicked: 0
-  globalClickWalkingIsDisabled: 0
-  globalStoryMoveCinemaBars: 0
-  globalStoryBeerClicked: 0
-  globalStoryInDalogue: 0
-  globalStoryPlayerArrivedMinusX8: 0
-  globalClicksAllowed: 1
 --- !u!114 &2115374550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mFadeOutTexture: {fileID: 2800000, guid: 4fc739aa6b31a15479f5a8d25cd22c79, type: 3}
-  mFadeSpeed: 7
+  mFadeSpeed: 4
 --- !u!114 &2115374552
 MonoBehaviour:
   m_ObjectHideFlags: 0

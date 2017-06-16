@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fade : MonoBehaviour {
 
 	public Texture2D mFadeOutTexture;
-	public float mFadeSpeed = 5.0f;
+	public float mFadeSpeed = 3.0f;
 
 	private int mDrawDepth = -1000; // draw order of texture
 	private float mAlpha = 1.0f; //alpha value beteen 0 and 1
