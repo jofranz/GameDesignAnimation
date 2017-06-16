@@ -5,44 +5,44 @@ using UnityEngine;
 public class ItemInteraction : MonoBehaviour {
 
 
-	private ShowText ShowTextScript;
-	private GameObject TextControllerGO;
+	private ShowText mShowTextScript;
+	private GameObject mTextControllerGO;
 
-	private GuiBox GuiBoxScript;
-	private GameObject GuiBoxGO;
+	private GuiBox mGuiBoxScript;
+	private GameObject mGuiBoxGO;
 
-	private float startTime = 0.0f;
-	private float pressDuration = 1.0f;
-	private float timePassed = 0.0f;
-	private bool isPressed = false;
+	private float mStartTime = 0.0f;
+	private float mPressDuration = 1.0f;
+	private float mTimePassed = 0.0f;
+
+	private bool mIsPressed = false;
 	
-	private string targetName;
+	private string mTargetName;
 
 	// Use this for initialization
 	void Start () {
 		// displays a text in the inventory section
-		TextControllerGO = GameObject.Find ("TextController");
-		ShowTextScript = TextControllerGO.GetComponent<ShowText>();
+		mTextControllerGO = GameObject.Find ("TextController");
+		mShowTextScript = mTextControllerGO.GetComponent<ShowText>();
 
+		mGuiBoxGO = GameObject.Find ("TextController");
+		mGuiBoxScript = mGuiBoxGO.GetComponent<GuiBox> ();
 
-		GuiBoxGO = GameObject.Find ("TextController");
-		GuiBoxScript = GuiBoxGO.GetComponent<GuiBox> ();
-
-		targetName = gameObject.transform.name;
+		mTargetName = gameObject.transform.name;
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		if (isPressed) {
-			timePassed = Time.time - startTime;
-			print ("timePassed: " + timePassed);
+		if (mIsPressed) {
+			mTimePassed = Time.time - mStartTime;
+			print ("timePassed: " + mTimePassed);
 
 			// zeit abgelaufen?
-			if ((timePassed > pressDuration) ) {
+			if ((mTimePassed > mPressDuration) ) {
 				print ("Sekunde/n abgelaufen");
 
-				ShowTextScript.setText (targetName + " long pressed " + Time.time);
+				mShowTextScript.setText (mTargetName + " long pressed " + Time.time);
 
 				resetTimer ();
 			}
@@ -51,20 +51,22 @@ public class ItemInteraction : MonoBehaviour {
 		
 
 	void OnMouseOver() {
+
 		if (Input.GetMouseButtonDown (0)) {
 
-			if (startTime == 0.0F) {
-				startTime = Time.time;
+			if (mStartTime == 0.0F) {
+				mStartTime = Time.time;
 				print ("time set");
 			}
 
-			isPressed = true;
+			mIsPressed = true;
 
-			print ("startTime: " + startTime + " pressDuration: " + pressDuration + " timePassed: " + timePassed);
+			print ("startTime: " + mStartTime + " pressDuration: " + mPressDuration + " timePassed: " + mTimePassed);
 
-			GuiBoxScript.showBox (true);
+			print ("clicked once VIA THIS");
 
-			ShowTextScript.setText (targetName + " angeklickt " + Time.time);
+			mGuiBoxScript.showBox (true);
+			mShowTextScript.setText (mTargetName + " angeklickt " + Time.time);
 
 
 
@@ -87,8 +89,8 @@ public class ItemInteraction : MonoBehaviour {
 
 
 	void resetTimer() {
-		isPressed = false;
-		startTime = 0.0F;
+		mIsPressed = false;
+		mStartTime = 0.0F;
 		print ("resetTimer");
 	}
 }

@@ -28,8 +28,9 @@ public class Story : MonoBehaviour {
 
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 1. Text");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 2. Text");
-		mGuiBox.mStoryActionArrayList.Add ("_Action:testStr1");
+		//mGuiBox.mStoryActionArrayList.Add ("_Action:testStr1");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der 3. Text");
+		mGuiBox.mStoryActionArrayList.Add ("_Action:moveCinemaBars");
 
 		SingletonData.Instance.globalMouseHasBeenClicked = false;
 		mGuiBox.showBox (false);
@@ -87,6 +88,11 @@ public class Story : MonoBehaviour {
 
 			case "testStr1":
 				print("testStr1 case");
+				break;
+
+			case "moveCinemaBars":
+				print ("case: globalStoryMoveCinemaBars");
+				SingletonData.Instance.globalStoryMoveCinemaBars = true;
 				break;
 
 			default:

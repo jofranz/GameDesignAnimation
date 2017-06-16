@@ -8,6 +8,7 @@ public class SingletonData : Singleton<SingletonData>
 
 	public bool globalMouseHasBeenClicked = false;
 	public bool globalClickWalkingIsDisabled = false;
+	public bool globalStoryMoveCinemaBars = false;
 	
 
 	void Start () {

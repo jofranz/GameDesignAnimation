@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneMgmt : MonoBehaviour {
 
+
+
+
 	// Use this for initialization
 	void Start () {
-		print ("SceneMgmt start");
-
-
-
-
+		print ("SceneMgmt.cs started");
 	}
 
 
@@ -23,10 +22,7 @@ public class SceneMgmt : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown(0) ) {
-
 			StartCoroutine (ChangeLevel () );
-
-
 		}
 	}
 

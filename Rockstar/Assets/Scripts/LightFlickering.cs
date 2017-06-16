@@ -3,19 +3,19 @@ using System.Collections;
 
 public class LightFlickering : MonoBehaviour {
 
-	private SpriteRenderer spRenderer;
+	private SpriteRenderer mSpRenderer;
 
 	public bool mVisible;
 	private float mNextActionTime = 0.0f;
 	private float mTimePeriod = 1.0f;
-	public int mPeriodMin = 1;
-	public int mPeriodMax = 3;
-	public int mDurationMin = 0;
-	public int mDuratoinMax = 15;
+	public float mPeriodMin = 1.0f;
+	public float mPeriodMax = 3.0f;
+	public float mDurationMin = 3.0f;
+	public float mDuratoinMax = 15.0f;
 
 
 	void Start () {
-		spRenderer = gameObject.GetComponent<SpriteRenderer> (); // prepare sprite renderer
+		mSpRenderer = gameObject.GetComponent<SpriteRenderer> (); // prepare sprite renderer
 	}
 
 
@@ -44,6 +44,6 @@ public class LightFlickering : MonoBehaviour {
 			mVisible = true;
 		}
 
-		spRenderer.enabled = mVisible;
+		mSpRenderer.enabled = mVisible;
 	}
 }	

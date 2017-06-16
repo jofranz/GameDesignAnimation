@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		print ("CameraFollow() started");
 		mTransform = mPlayerPosition.transform;
 	}
 	
