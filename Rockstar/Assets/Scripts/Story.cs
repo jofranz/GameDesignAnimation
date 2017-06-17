@@ -50,9 +50,9 @@ public class Story : MonoBehaviour {
 		mGuiBox = mTextControllerGO.GetComponent<GuiBox> ();
 
 
-		mGuiBox.mStoryActionArrayList.Add ("<--- Geh doch mal nach links");
+		mGuiBox.mStoryActionArrayList.Add ("Geh doch mal nach links");
 		mGuiBox.mStoryActionArrayList.Add ("_Action:moveCinemaBars");
-		mGuiBox.mStoryActionArrayList.Add ("War doch falsch. Rechts gehts weiter. --->");
+		mGuiBox.mStoryActionArrayList.Add ("War doch falsch. Rechts gehts weiter.");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan: Oh eine Flasch Bier. Die ist auch noch fast haltbar.");
 		mGuiBox.mStoryActionArrayList.Add ("_Action:activateWalking");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der lezte Text 1");
@@ -60,9 +60,6 @@ public class Story : MonoBehaviour {
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der lezte Text 3");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan:\nDas ist der lezte Text 4");
 		mGuiBox.mStoryActionArrayList.Add ("_Action:changeToScene0");
-
-
-	
 
 
 		mGuiBox.showBox (true);
@@ -75,6 +72,7 @@ public class Story : MonoBehaviour {
 			mBeerFullRunBefore = true;
 			mBeerFullGO.SetActive (true);
 			mBeerFullGO.GetComponent<SpriteRenderer> ().enabled = true;
+			mBeerEmptyGO.SetActive (true);
 			mBeerEmptyGO.GetComponent<SpriteRenderer> ().enabled = true;
 		}
 
@@ -82,7 +80,6 @@ public class Story : MonoBehaviour {
 		if ( SingletonData.Instance.globalClicksAllowed && SingletonData.Instance.globalMouseHasBeenClicked ) {
 			SingletonData.Instance.globalMouseHasBeenClicked = false;
 			mouseClicked ();
-
 		}
 
 
@@ -90,6 +87,7 @@ public class Story : MonoBehaviour {
 		if(SingletonData.Instance.globalStoryBeerClicked && SingletonData.Instance.globalStoryInDalogue && mContinueRunningBeer) {
 			mBeerFullGO.GetComponent<SpriteRenderer> ().enabled = false;
 			mBeerFullGO.GetComponent<BoxCollider2D> ().enabled = false;
+			mBeerEmptyGO.GetComponent<SpriteRenderer> ().enabled = true;
 
 			mContinueRunningBeer = false;
 
@@ -136,7 +134,6 @@ public class Story : MonoBehaviour {
 		} else { // not in bounds of the array
 			mGuiBox.showBox (false);
 			print ("else block");
-
 		}
 
 
@@ -153,7 +150,6 @@ public class Story : MonoBehaviour {
 			case "testStr1":
 				print("testStr1 case");
 				break;
-			
 
 			case "moveCinemaBars":
 				print ("case: globalStoryMoveCinemaBars");
@@ -166,7 +162,6 @@ public class Story : MonoBehaviour {
 			case "activateWalking":
 				SingletonData.Instance.globalClickWalkingIsDisabled = false;
 				SingletonData.Instance.globalStoryInDalogue = false;
-
 				break;
 
 			case "changeToScene0":
@@ -180,7 +175,7 @@ public class Story : MonoBehaviour {
 
 				DontDestroyOnLoad (mSingleton);
 
-				mSceneScript.changeLevelToLevel0 ();
+				mSceneScript.ChangeSceneTo ("Level0", 1);
 				break;
 
 			default:

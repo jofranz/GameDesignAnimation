@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneMgmt : MonoBehaviour {
 
-
+	public string mTargetScene = "CutScene";
+	public int mFadeDirection = 1;
 
 
 	// Use this for initialization
@@ -22,36 +23,20 @@ public class SceneMgmt : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown(0) ) {
-			StartCoroutine (ChangeLevel () );
+			StartCoroutine (ChangeSceneToIEnum(mTargetScene, mFadeDirection) );
 		}
 	}
 
 
-	public void changeLevel() {
-		StartCoroutine (ChangeLevel () );
-	}
-
-
-	public void changeLevelToLevel0() {
-		StartCoroutine (ChangeLevelToLevel0 () );
+	public void ChangeSceneTo(string aTargetScene, int aFadeDirection) {
+		StartCoroutine ( ChangeSceneToIEnum(aTargetScene, aFadeDirection) );
 	}
 
 
 	// fade to black
-	IEnumerator ChangeLevelToLevel0() {
-		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (1);
+	IEnumerator ChangeSceneToIEnum(string aTargetScene, int aFadeDirection) {
+		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (aFadeDirection);
 		yield return new WaitForSeconds (mFadeTime);
-
-		SceneManager.LoadScene ("Level0", LoadSceneMode.Single);
+		SceneManager.LoadScene (aTargetScene, LoadSceneMode.Single);
 	}
-
-
-
-	// fade to black
-	IEnumerator ChangeLevel() {
-		float mFadeTime = GameObject.Find("Main Camera").GetComponent<Fade> ().beginFade (1);
-		yield return new WaitForSeconds (mFadeTime);
-		SceneManager.LoadScene ("CutScene", LoadSceneMode.Single);
-	}
-
 }
