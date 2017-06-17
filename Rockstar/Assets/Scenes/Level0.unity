@@ -489,6 +489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342447e997ae6d64e80fb6b8fa986e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mTargetScene: CutScene
+  mFadeDirection: 1
 --- !u!61 &156495740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -560,7 +562,6 @@ GameObject:
   m_Component:
   - component: {fileID: 398538908}
   - component: {fileID: 398538907}
-  - component: {fileID: 398538909}
   m_Layer: 0
   m_Name: coins
   m_TagString: Untagged
@@ -616,18 +617,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &398538909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 398538906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46dbef4b83cea3f41ac19bb01c943c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myObject: {fileID: 0}
 --- !u!1 &500948044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1334,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1398,7 +1387,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
