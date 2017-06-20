@@ -28,16 +28,6 @@ public class BlankFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            mInterstitialAd = new InterstitialAd(getContext());
-        }
-        mInterstitialAd.setAdUnitId("ca-app-pub-9202887805780186/8991148952");
-        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("00B74723240B0E3655D79216720F1ABC").build());
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-        }
     }
 
 
@@ -53,14 +43,6 @@ public class BlankFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        sendButton = (Button) getView().findViewById(R.id.send);
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = "change this";
-                ((UnityPlayerActivity)getActivity()).mUnityPlayer.UnitySendMessage("AndroidCommunication","javaMessageIn",text);
-            }
-        });
         inapp = (ImageView) getView().findViewById(R.id.buy);
         inapp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,16 +60,5 @@ public class BlankFragment extends Fragment {
             }
         });
     }
-
-
-
-    public static void showAd(){
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-        }
-    }
-
 
 }
