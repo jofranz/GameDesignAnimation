@@ -5,13 +5,16 @@ public class PlayerLookingDirection : MonoBehaviour {
 
 	private Rigidbody2D rg;
 	private Animator mAnimator;
-	private float prevPosX = 0;
-	private Vector2 position;
+	private float mPrevPosX = 0;
+	private Vector2 mPositionVec;
+
+	public bool mDoOnce = false;
 
 	void Start(){
 		mAnimator = GetComponent<Animator> ();
 		rg = GetComponent<Rigidbody2D>();
 
+		//mAnimator.SetTrigger ("doPuke");
 	}
 
 
@@ -19,13 +22,21 @@ public class PlayerLookingDirection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//mAnimator.SetInteger ("AnimState", 40); // 40 = puke animation
-		print ("puke");
-		mAnimator.SetTrigger ("doPuke");
 
-		if(false) {
+		if(mDoOnce){
+			mDoOnce = false;
+
+
+			mAnimator.SetInteger ("AnimState", 40); // 40 = puke animation
+			//mAnimator.SetTrigger ("doPuke");
+			print ("puke");
+		}
+
+		//mAnimator.SetInteger ("AnimState", 40); // 40 = puke animation
+
+		if(true) {
 		// checks and animates player if moving
-		if (rg.position.x != prevPosX) {
+			if (rg.position.x != mPrevPosX) {
 			print("anim state change 1"); // walking animation
 				mAnimator.SetInteger ("AnimState", 1);
 		} else { // standing animation
@@ -33,7 +44,7 @@ public class PlayerLookingDirection : MonoBehaviour {
 			print("anim state change 0");
 		}
 		}
-		prevPosX = rg.position.x;
+		mPrevPosX = rg.position.x;
 		
 	}
 }
