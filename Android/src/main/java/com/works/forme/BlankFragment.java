@@ -21,8 +21,8 @@ import com.google.android.gms.ads.purchase.*;
 
 public class BlankFragment extends Fragment {
     private static InterstitialAd mInterstitialAd;
-    private Button showAd;
-    private Button sendButton;
+    private ImageView showAd;
+
     private ImageView inapp;
 
     @Override
@@ -53,7 +53,7 @@ public class BlankFragment extends Fragment {
                 ((UnityPlayerActivity)getActivity()).changeActivity();
             }
         });
-        showAd = (Button) getView().findViewById(R.id.button);
+        showAd = (ImageView) getView().findViewById(R.id.logout);
         showAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
