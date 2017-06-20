@@ -36,17 +36,8 @@ class JSONParser constructor(context: Context){
         var model = Model.getInstance(context!!)
         if (name != null){
            var jsonStr = name
+            model.firstname = name
 
-            var tmp = jsonStr.split(" ")
-            model.firstname = tmp[0]
-            var name = ""
-            for (i in 1..tmp.count()){
-                name += name + " "
-            }
-            model.secondname = name
-            if (location != null ){
-                model.location = location
-            }
         }
 
     }

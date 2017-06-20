@@ -71,7 +71,6 @@ public class StartActivity extends Activity {
             public void onSuccess(LoginResult loginResult) {
                 Log.d("onSuccess", loginResult.getAccessToken().getUserId());
                 loadData(loginResult);
-                startActivity(new Intent(StartActivity.this,UnityPlayerActivity.class));
 
             }
             @Override
@@ -115,7 +114,7 @@ public class StartActivity extends Activity {
                         // Application code
                         JSONParser jsonParser = new JSONParser(getApplicationContext());
                         jsonParser.parseJSON(object);
-
+                        startActivity(new Intent(StartActivity.this,UnityPlayerActivity.class));
                     }
                 });
         Bundle parameters = new Bundle();

@@ -39,8 +39,9 @@ public class UnityPlayerActivity extends Activity
 		mUnityPlayer = new UnityPlayer(this);
 		setContentView(mUnityPlayer);
 		mUnityPlayer.requestFocus();
-		Model model = Model.Companion.getInstance(getApplicationContext());
-		mUnityPlayer.UnitySendMessage("AndroidCommunication","SendFullNameToUnity", model.getFirstname() +" " + model.getSecondname());
+		Model model = Model.Companion.getInstance(this);
+		sendName(model.getFirstname());
+
 
 	}
 	public UnityPlayer getmUnityPlayer(){
@@ -61,6 +62,12 @@ public class UnityPlayerActivity extends Activity
 			intent = new Intent();
 		}
 		super.startActivityForResult(intent, requestCode);
+	}
+
+	public void sendName(String name){
+		Log.d("Facebook",name);
+		mUnityPlayer.UnitySendMessage("AndroidCommunication","SendFullNameToUnity",name);
+
 	}
 
 	// Quit Unity

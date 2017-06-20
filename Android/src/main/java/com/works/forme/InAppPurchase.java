@@ -30,10 +30,10 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
     private Controller contr;
 
     IabHelper mHelper;
-    private String bottles = "bottles";
-    private String money = "money";
-    private String passport = "passport";
-    private String gloves = "gloves";
+    private String bottles = "bottle_abo";
+    private String money = "money_abo";
+    private String passport = "passport_abo";
+    private String gloves = "gloves_abo";
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
             = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result,
@@ -200,16 +200,20 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d("Tag",String.valueOf(requestCode));
+        Log.d("resultCode",String.valueOf(resultCode));
+        Log.d("defaultCode",String.valueOf(RESULT_OK));
         switch (requestCode){
-            case 1000:
-                if (resultCode != RESULT_OK) return;
+            case 10000:
+                Log.d("Hallo","Hallo");
+                if (resultCode != RESULT_OK)
+                    return;
                 int responseCode0 = data.getIntExtra("RESPONSE_CODE",1);
                 Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode0));
                 contr.setElement(0);
                 contr.saveState();
                 bottlesBtn.setEnabled(false);
                 break;
-            case 1001:
+            case 10001:
                 if (resultCode != RESULT_OK) return;
                 int responseCode1 = data.getIntExtra("RESPONSE_CODE",1);
                 Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode1));
@@ -219,8 +223,11 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                 break;
 
 
-            case 1002:
-                if (resultCode != RESULT_OK) return;
+            case 10002:
+                if (resultCode != RESULT_OK) {
+                    Log.d("Tag",String.valueOf(resultCode));
+                    return;
+                }
                 int responseCode2 = data.getIntExtra("RESPONSE_CODE",1);
                 Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode2));
                 contr.setElement(0);
@@ -229,7 +236,7 @@ public class InAppPurchase extends Activity implements View.OnClickListener {
                 break;
 
 
-            case 1003:
+            case 10003:
                 if (resultCode != RESULT_OK) return;
                 int responseCode3 = data.getIntExtra("RESPONSE_CODE",1);
                 Log.i(tag, "onActivityResult() - \"RESPONSE_CODE\" return " + String.valueOf(responseCode3));

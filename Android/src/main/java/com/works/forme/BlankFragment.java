@@ -40,6 +40,7 @@ public class BlankFragment extends Fragment {
 
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
@@ -48,7 +49,7 @@ public class BlankFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Model model = Model.Companion.getInstance(getActivity().getApplicationContext());
-                Log.d("Model",model.getFirstname());
+                Log.d("Model",model.getSecondname());
                 ((UnityPlayerActivity)getActivity()).changeActivity();
             }
         });
