@@ -50,7 +50,8 @@ public class Story : MonoBehaviour {
 		mGuiBox = mTextControllerGO.GetComponent<GuiBox> ();
 
 
-		mGuiBox.mStoryActionArrayList.Add ("Geh doch mal nach links");
+		mGuiBox.mStoryActionArrayList.Add ("Willkommen im Spiel. Das ist das Tutorial");
+		mGuiBox.mStoryActionArrayList.Add ("Suche den Kiosk um die mit der Bewegung vertraut zu machen!");
 		mGuiBox.mStoryActionArrayList.Add ("_Action:moveCinemaBars");
 		mGuiBox.mStoryActionArrayList.Add ("War doch falsch. Rechts gehts weiter.");
 		mGuiBox.mStoryActionArrayList.Add ("Duncan: Oh eine Flasch Bier. Die ist auch noch fast haltbar.");

@@ -37,11 +37,11 @@ public class PlayerLookingDirection : MonoBehaviour {
 		if(true) {
 		// checks and animates player if moving
 			if (rg.position.x != mPrevPosX) {
-			print("anim state change 1"); // walking animation
+			//print("anim state change 1"); // walking animation
 				mAnimator.SetInteger ("AnimState", 1);
 		} else { // standing animation
 				mAnimator.SetInteger("AnimState", 0);
-			print("anim state change 0");
+			//print("anim state change 0");
 		}
 		}
 		mPrevPosX = rg.position.x;

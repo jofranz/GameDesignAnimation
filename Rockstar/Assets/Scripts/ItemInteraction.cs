@@ -71,8 +71,9 @@ public class ItemInteraction : MonoBehaviour {
 
 
 			switch (mTargetName) {
-				case "BierflascheVoll":
-					print ("##ItemInteraction.cs: BierflascheVoll case");
+
+				case "BottlePane":
+					print ("##ItemInteraction.cs: BottlePane case");
 					SingletonData.Instance.globalStoryBeerClicked = true;
 					SingletonData.Instance.globalStoryInDalogue = true;
 
