@@ -527,8 +527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mSendText: 0
-  mText: jlaksjflksdf
-  mFullName: J F
+  mText: 01
+  mFullName: Normen Krug
 --- !u!1 &906425894
 GameObject:
   m_ObjectHideFlags: 0
